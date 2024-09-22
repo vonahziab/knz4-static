@@ -1,0 +1,53 @@
+{
+	"name": "knz",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"@types/node": "^16.7.13",
+		"core-js": "^3.6.4",
+		"eruda-code": "^2.0.0",
+		"eruda-dom": "^2.0.0",
+		"global": "^4.4.0",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"axios": "^1.6.2",
+		"cross-env": "^7.0.3",
+		"crypto": "^1.0.1",
+		"eruda": "^3.0.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-icons": "^4.12.0",
+		"react-loading-skeleton": "^3.4.0",
+		"react-scripts": "5.0.1",
+		"recoil": "^0.7.7",
+		"typescript": "^4.4.2"
+	},
+	"scripts": {
+		"start": "cross-env PORT=18305 HTTPS=true react-scripts start",
+		"build": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false react-scripts build",
+		"deploy-gh-pahes": "git subtree push --prefix build https://github.com/vonahziab/knz4-static gh-pages",
+		"deploy": "cross-env NODE_ENV=production GENERATE_SOURCEMAP=false react-scripts build && git add . && git commit -m 'build' && git push && git subtree push --prefix build https://github.com/vonahziab/knz4-static gh-pages"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app"
+		],
+		"rules": {
+			"react-hooks/rules-of-hooks": "warn",
+			"react-hooks/exhaustive-deps": "off"
+		}
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {}
+}
