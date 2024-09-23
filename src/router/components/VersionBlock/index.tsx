@@ -12,7 +12,7 @@ const VersionBlock = (props: Props) => {
 				position: 'fixed',
 				bottom: 0,
 				right: 0,
-				zIndex: 999,
+				zIndex: 1000,
 				fontSize: 8,
 				color: 'var(--text_color)',
 				opacity: 0.15,

@@ -56,4 +56,4 @@ export interface IRouter {
 export type AppView = 'main' | '2' | '3' | '4';
 export type AppModal = 'test';
 
-export type AppPanel = 'test';
+export type AppPanel = 'test' | 'main';

@@ -85,7 +85,7 @@ const Swiper = ({
 			setDX(0);
 			setX(0);
 			setEnabledSwipeBack(true);
-			C.style.transition = 'var(--armui-transition-time) linear';
+			C.style.transition = 'var(--default_transition)';
 			C.style.transform = `scale(0)`;
 		};
 

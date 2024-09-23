@@ -2,8 +2,8 @@
 	position: fixed;
 	border-radius: 50%;
 	opacity: .2;
-	background-color: var(--armui-swiper-circle-bg-color);
+	background-color: white;
 	pointer-events: none;
 	touch-action: manipulation;
-	z-index: 999;
+	z-index: 998;
 }

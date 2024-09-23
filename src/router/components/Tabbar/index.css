@@ -6,7 +6,7 @@
 	bottom: 0px;
 	background-color: var(--bg_color);
 	border-top: solid 1px var(--bg_color_2);
-	z-index: 998px;
+	z-index: 999;
 }
 
 .Tabbar {

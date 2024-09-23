@@ -51,7 +51,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 				if (enabledSwipeBack) getWebApp()?.HapticFeedback.impactOccurred('rigid');
 				setEnabledSwipeBack(false);
 			} else {
-				ModalSwipeHandler.style.backgroundColor = 'var(--hint90_color)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
 				setEnabledSwipeBack(true);
 			}
 
@@ -67,7 +67,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			setDY(0);
 
 			if (ModalSwipeHandler) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--hint50_color)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
 			}
 		};
 
@@ -125,7 +125,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 						style={{
 							height: 5,
 							width: 36,
-							backgroundColor: 'var(--hint50_color)',
+							backgroundColor: 'var(--bg_color_3)',
 							borderRadius: 2.5,
 						}}
 					/>
@@ -162,7 +162,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 								_closeListener();
 							}}
 						>
-							<IoCloseCircle size={30} color="var(--hint90_color)" />
+							<IoCloseCircle size={30} color="var(--bg_color_3)" />
 						</div>
 					</div>
 				)}

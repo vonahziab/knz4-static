@@ -4,8 +4,7 @@ import { PanelProps } from 'router/types';
 const Test = ({ id, router }: PanelProps) => {
 	return (
 		<Panel id={id} router={router}>
-			{/* Test
-			<button onClick={() => router.goBack()}>Назад</button> */}
+			<button onClick={() => router.goBack()}>Назад</button>
 			{new Array(10).fill(true).map((i, index) => {
 				return (
 					<div
