@@ -1,0 +1,11 @@
+{
+	"name": "Koinz 4.0",
+	"short_name": "Koinz",
+	"start_url": "",
+	"orientation": "portrait",
+	"display": "fullscreen",
+	"icons": [
+		{ "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+		{ "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+	]
+}

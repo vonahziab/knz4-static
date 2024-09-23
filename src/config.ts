@@ -1,9 +1,9 @@
 const config = {
 	server: {
-		domain: 'https://api.quickulator.ru',
+		domain: 'https://api.koinz.ru',
 	},
 	links: {},
-	version: '0.19',
+	version: '0.20',
 };
 
 export default config;
