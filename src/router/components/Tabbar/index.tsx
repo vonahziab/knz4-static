@@ -1,6 +1,7 @@
+import config from 'config';
 import useHaptic from 'hooks/useHaptic';
 import useSafeInsets from 'hooks/useSafeInsets';
-import VersionBlock from 'router/components/VersionBlock';
+import { useEffect, useState } from 'react';
 import routes, { AppView } from 'router/routes';
 import { IRouter } from 'router/types';
 import './index.css';
@@ -15,16 +16,54 @@ const Tabbar = ({ router }: { router: IRouter }) => {
 
 	const { bottom } = useSafeInsets();
 
+	// Анимация
+	const [tabbarShow, setTabbarShow] = useState(false);
+
+	useEffect(() => {
+		if (router.data.tabbarShow) {
+			setTabbarShow(true);
+		} else {
+			setTimeout(() => {
+				setTabbarShow(false);
+			}, 200);
+		}
+	}, [router.data.tabbarShow]);
+
+	useEffect(() => {
+		const TabbarWrapper = document.getElementById('TabbarWrapper');
+
+		if (TabbarWrapper) {
+			if (router.data.tabbarShow) {
+				setTimeout(() => {
+					TabbarWrapper.style.transform = 'translateY(0)';
+				}, 10);
+			} else {
+				TabbarWrapper.style.transform = 'translateY(100%)';
+			}
+		}
+	}, [router.data.tabbarShow, tabbarShow]);
+
 	return (
 		<>
-			{router.data.tabbarShow && <VersionBlock />}
-			{router.data.tabbarShow && (
+			{tabbarShow && (
 				<div
+					id="TabbarWrapper"
 					className="TabbarWrapper"
 					style={{
 						paddingBottom: bottom,
+						transition: 'var(--tabbar_transition)',
+						transform: 'translateY(100%)',
 					}}
 				>
+					<div
+						className="VersionBlock"
+						style={{
+							transition: 'var(--tabbar_transition)',
+							paddingBottom: bottom,
+						}}
+					>
+						<div style={{ padding: 2 }}>V{config.version}</div>
+					</div>
 					<div className="Tabbar">
 						{routes.views.map(
 							item =>
