@@ -3,10 +3,15 @@ const config = {
 		domain: 'https://api.koinz.ru',
 	},
 	colors: {
-		header: '#0E0D0B',
+		light: {
+			header: '#F9F9F9',
+		},
+		dark: {
+			header: '#0E0D0B',
+		},
 	},
 	links: {},
-	version: '0.91',
+	version: '0.92',
 };
 
 export default config;

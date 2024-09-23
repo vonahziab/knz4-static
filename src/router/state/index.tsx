@@ -1,5 +1,6 @@
 import { atom } from 'recoil';
 import routes, { AppModal, AppPanel, AppView } from 'router/routes';
+import { AppTheme } from 'router/types';
 
 export const app_tabbar_show = atom<boolean>({
 	key: 'app_tabbar_show',
@@ -19,6 +20,11 @@ export const app_view_history = atom<AppPanel[][]>({
 export const app_panel = atom<AppPanel[]>({
 	key: 'app_panel',
 	default: routes.views.map(i => i.startPanel),
+});
+
+export const app_theme = atom<AppTheme>({
+	key: 'app_theme',
+	default: undefined,
 });
 
 export const app_modal_id = atom<AppModal | undefined>({

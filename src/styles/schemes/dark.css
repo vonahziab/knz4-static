@@ -1,0 +1,14 @@
+body[scheme=dark] {
+	--bg_color: #0E0D0B;
+	--bg_color_2: #181715;
+	--bg_color_3: #22211F;
+	
+	--bg_color_4: #333230;
+	--bg_color_5: #494846;
+
+	--text_color: #FFFEFF;
+	--hint_color: #9E9E9E;
+
+	--skeleton_base_color: #444444;
+	--skeleton_highlight_color: #202020;
+}

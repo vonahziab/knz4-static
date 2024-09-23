@@ -3,6 +3,7 @@ import {
 	app_modal_id,
 	app_panel,
 	app_tabbar_show,
+	app_theme,
 	app_view,
 	app_view_history,
 	popout_element,
@@ -15,6 +16,7 @@ import {
 	_UseSetPanel,
 	_UseSetPopout,
 	_UseSetTabbarShow,
+	_UseSetTheme,
 	_UseSetView,
 } from 'router/types';
 import {
@@ -114,6 +116,19 @@ export const useGoBack: () => _UseGoBack = () => {
 			setPanel(panelSet(panel, _viewId, history[_viewId][history[_viewId].length - 2]));
 		}
 	};
+
+	return _;
+};
+
+export const useSetTheme: () => _UseSetTheme = () => {
+	const setColorScheme = useSetRecoilState(app_theme);
+
+	const setScheme = (scheme: 'light' | 'dark' = 'light') => {
+		setColorScheme(scheme);
+		document.body.setAttribute('scheme', scheme);
+	};
+
+	const _: _UseSetTheme = theme => setScheme(theme);
 
 	return _;
 };

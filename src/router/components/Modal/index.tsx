@@ -72,7 +72,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			setDY(0);
 
 			if (ModalSwipeHandler) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_6)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_5)';
 			}
 		};
 
@@ -94,7 +94,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 	const ote = (e: React.TouchEvent<HTMLDivElement>) => {
 		const target = e.currentTarget;
 		setTimeout(() => {
-			target.style.color = 'var(--bg_color_6)';
+			target.style.color = 'var(--bg_color_5)';
 		}, 50);
 	};
 
@@ -106,7 +106,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 		target.style.color = 'var(--bg_color_3)';
 
 		setTimeout(() => {
-			target.style.color = 'var(--bg_color_6)';
+			target.style.color = 'var(--bg_color_5)';
 		}, 50);
 
 		setTimeout(() => {
@@ -158,7 +158,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 						style={{
 							height: 5,
 							width: 36,
-							backgroundColor: 'var(--bg_color_6)',
+							backgroundColor: 'var(--bg_color_5)',
 							borderRadius: 2.5,
 						}}
 					/>
@@ -194,7 +194,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 							style={{
 								height: 30,
 								width: 30,
-								color: 'var(--bg_color_6)',
+								color: 'var(--bg_color_5)',
 							}}
 						>
 							<IoCloseCircle size={30} />

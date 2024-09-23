@@ -3,19 +3,21 @@ import { AppModal, AppPanel, AppView } from 'router/routes';
 
 export type PanelProps = { id: AppPanel; viewId: number; router: IRouter };
 export type ModalProps = { id: AppModal; router: IRouter };
+export type AppTheme = 'light' | 'dark';
 
 // * Хуки роутера
 export type _UseSetView = (actionView: AppView) => void;
 export type _UseGoForward = (panel_id: AppPanel, __viewId?: number) => void;
 export type _UseSetPanel = (panel_id: AppPanel, __viewId?: number) => void;
 export type _UseGoBack = (__viewId?: number) => void;
+export type _UseSetTheme = (theme: 'light' | 'dark') => void;
 export type _UseSetPopout = (Popout?: JSX.Element) => void;
 export type _UseSetModal = (modal_id?: AppModal) => void;
 export type _UseSetTabbarShow = (value: boolean) => void;
 export type _UseCloseModal = () => void;
 
 export interface IRoutes {
-	startView: AppView,
+	startView: AppView;
 	modals: {
 		id: AppModal;
 		modal: (props: ModalProps) => JSX.Element;
@@ -37,12 +39,14 @@ export interface IRouter {
 	goForward: _UseGoForward;
 	goBack: _UseGoBack;
 	setView: _UseSetView;
+	setTheme: _UseSetTheme;
 	setPanel: _UseSetPanel;
 	setPopout: _UseSetPopout;
 	setModal: _UseSetModal;
 	closeModal: _UseCloseModal;
 	setTabbarShow: _UseSetTabbarShow;
 	data: {
+		theme: AppTheme;
 		activeView: AppView;
 		history: AppPanel[][];
 		activePanel: AppPanel[];

@@ -24,6 +24,37 @@ const Main = ({ id, router }: PanelProps) => {
 					RU
 				</button>
 			</div>
+
+			<div
+				style={{
+					height: 100,
+					backgroundColor: 'var(--bg_color)',
+				}}
+			/>
+			<div
+				style={{
+					height: 100,
+					backgroundColor: 'var(--bg_color_2)',
+				}}
+			/>
+			<div
+				style={{
+					height: 100,
+					backgroundColor: 'var(--bg_color_3)',
+				}}
+			/>
+			<div
+				style={{
+					height: 100,
+					backgroundColor: 'var(--bg_color_4)',
+				}}
+			/>
+			<div
+				style={{
+					height: 100,
+					backgroundColor: 'var(--bg_color_5)',
+				}}
+			/>
 		</Panel>
 	);
 };
