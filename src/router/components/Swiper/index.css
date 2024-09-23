@@ -5,4 +5,17 @@
 	pointer-events: none;
 	touch-action: manipulation;
 	z-index: 998;
+
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.ARMUI_Swiper_circle_content {
+	color: black;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.8;
 }

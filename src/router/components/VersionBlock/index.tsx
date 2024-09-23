@@ -1,21 +1,14 @@
 import config from 'config';
 import useSafeInsets from 'hooks/useSafeInsets';
+import './index.css';
 
-type Props = {};
-
-const VersionBlock = (props: Props) => {
+const VersionBlock = () => {
 	const { bottom } = useSafeInsets();
 
 	return (
 		<div
+			className="VersionBlock"
 			style={{
-				position: 'fixed',
-				bottom: 0,
-				right: 0,
-				zIndex: 1000,
-				fontSize: 8,
-				color: 'var(--text_color)',
-				opacity: 0.15,
 				paddingBottom: bottom,
 			}}
 		>

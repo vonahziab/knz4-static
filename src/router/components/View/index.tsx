@@ -15,7 +15,6 @@ const View = ({ vieweId, children, selectedPanel, router }: Props) => {
 	const WebApp = getWebApp();
 
 	useEffect(() => {
-		// console.log(vieweId, router.data.history[vieweId].length);
 		router.data.history[vieweId].length > 1 || router.data.modal_id
 			? WebApp?.BackButton.show()
 			: WebApp?.BackButton.hide();

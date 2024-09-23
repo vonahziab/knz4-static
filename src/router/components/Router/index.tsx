@@ -1,6 +1,3 @@
-import config from 'config';
-import getWebApp from 'functions/getWebApp';
-import { useEffect } from 'react';
 import routes from 'router/routes';
 import { IRouter } from 'router/types';
 import ModalRoot from '../ModalRoot';
@@ -9,12 +6,6 @@ import Tabbar from '../Tabbar';
 import View from '../View';
 
 const Router = ({ router }: { router: IRouter }) => {
-	const WebApp = getWebApp();
-
-	useEffect(() => {
-		WebApp?.setHeaderColor(config.colors.header);
-	}, []);
-
 	return (
 		<>
 			{router.data.popout}

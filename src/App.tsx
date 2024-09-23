@@ -1,3 +1,4 @@
+import config from 'config';
 import getWebApp from 'functions/getWebApp';
 import { FC, useEffect } from 'react';
 import { Router, useRouter } from 'router';
@@ -8,6 +9,7 @@ const App: FC = () => {
 	useEffect(() => {
 		const WebApp = getWebApp();
 		WebApp.ready();
+		WebApp.setHeaderColor(config.colors.header);
 	}, []);
 
 	return <Router router={router} />;

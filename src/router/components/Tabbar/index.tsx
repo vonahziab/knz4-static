@@ -15,54 +15,56 @@ const Tabbar = ({ router }: { router: IRouter }) => {
 
 	const { bottom } = useSafeInsets();
 
-	return router.data.tabbarShow ? (
+	return (
 		<>
-			<VersionBlock />
-			<div
-				className="TabbarWrapper"
-				style={{
-					paddingBottom: bottom,
-				}}
-			>
-				<div className="Tabbar">
-					{routes.views.map(
-						item =>
-							item.tabbar && (
-								<div
-									key={item.id}
-									className="TabbarItem"
-									onClick={() => handleClick(item.id)}
-								>
+			{router.data.tabbarShow && <VersionBlock />}
+			{router.data.tabbarShow && (
+				<div
+					className="TabbarWrapper"
+					style={{
+						paddingBottom: bottom,
+					}}
+				>
+					<div className="Tabbar">
+						{routes.views.map(
+							item =>
+								item.tabbar && (
 									<div
-										className={`TabbarItemIcon${
-											router.data.activeView === item.id ? '-selected' : ''
-										}`}
-										style={{
-											height: item.tabbar.iconSize || 28,
-											width: item.tabbar.iconSize || 28,
-										}}
+										key={item.id}
+										className="TabbarItem"
+										onClick={() => handleClick(item.id)}
 									>
-										<item.tabbar.icon size={item.tabbar.iconSize} />
-									</div>
-									{item.tabbar.text && (
 										<div
-											className={`TabbarItemText${
+											className={`TabbarItemIcon${
 												router.data.activeView === item.id
 													? '-selected'
 													: ''
 											}`}
+											style={{
+												height: item.tabbar.iconSize || 28,
+												width: item.tabbar.iconSize || 28,
+											}}
 										>
-											{item.tabbar.text}
+											<item.tabbar.icon size={item.tabbar.iconSize} />
 										</div>
-									)}
-								</div>
-							)
-					)}
+										{item.tabbar.text && (
+											<div
+												className={`TabbarItemText${
+													router.data.activeView === item.id
+														? '-selected'
+														: ''
+												}`}
+											>
+												{item.tabbar.text}
+											</div>
+										)}
+									</div>
+								)
+						)}
+					</div>
 				</div>
-			</div>
+			)}
 		</>
-	) : (
-		<></>
 	);
 };
 

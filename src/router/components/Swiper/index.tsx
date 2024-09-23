@@ -114,31 +114,19 @@ const Swiper = ({
 				left: CIRCLE_WIDTH * -1,
 				height: CIRCLE_HEIGHT,
 				width: CIRCLE_WIDTH,
-				display: 'flex',
-				justifyContent: 'end',
-				alignItems: 'center',
 			}}
 		>
 			<div
+				className="ARMUI_Swiper_circle_content"
 				style={{
 					width: CIRCLE_WIDTH / 3 + 6,
 					height: CIRCLE_WIDTH / 3,
-					color: 'black',
-					overflow: 'hidden',
-					display: 'flex',
-					justifyContent: 'center',
-					alignItems: 'center',
-					// backgroundColor: 'red',
-					// opacity: 0.3,
 				}}
 			>
 				{showIconBack && (
 					<IoIosArrowBack
 						size={(CIRCLE_WIDTH / 3) * 0.9}
 						color={'var(--primary_color)'}
-						style={{
-							opacity: 0.8,
-						}}
 					/>
 				)}
 			</div>

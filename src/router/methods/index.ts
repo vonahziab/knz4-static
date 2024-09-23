@@ -60,10 +60,7 @@ export const useGoForward: () => _UseGoForward = () => {
 	const viewId = getViewIdFromName(activeView); // открытая view
 
 	const _: _UseGoForward = (actionPanel, __viewId = -1) => {
-		// console.log('call goForward...', panel, history);
-
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
-		// const panel = history[_viewId].slice(-1);
 		if (panel[_viewId] !== actionPanel) {
 			setHistory(historyPush(history, _viewId, actionPanel));
 			setPanel(panelSet(panel, _viewId, actionPanel));
@@ -83,13 +80,12 @@ export const useGoBack: () => _UseGoBack = () => {
 	// const [popout, setPopout] = useRecoilState(router_popout);
 
 	const _: _UseGoBack = (__viewId = -1) => {
-		// console.log('call goBack...', panel, history);
-
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 
 		// if (popout) {
 		// 	return setPopout(undefined);
 		// }
+
 		// if (modal) {
 		// 	return setModal(undefined);
 		// }
@@ -106,14 +102,12 @@ export const useGoBack: () => _UseGoBack = () => {
 
 export const useSetPopout: () => _UseSetPopout = () => {
 	const setPopout = useSetRecoilState(popout_element);
-	// window.history.pushState('loop', 'loop');
 	const _: _UseSetPopout = Popout => setPopout(Popout);
 	return _;
 };
 
 export const useSetModal: () => _UseSetModal = () => {
 	const setModal = useSetRecoilState(app_modal_id);
-	// window.history.pushState('loop', 'loop');
 	const _: _UseSetModal = modal_id => setModal(modal_id);
 
 	return _;
@@ -141,7 +135,6 @@ export const useCloseModal: () => _UseCloseModal = () => {
 
 export const useSetTabbarShow: () => _UseSetTabbarShow = () => {
 	const setTabarShow = useSetRecoilState(app_tabbar_show);
-	// window.history.pushState('loop', 'loop');
 	const _: _UseSetTabbarShow = value => setTabarShow(value);
 
 	return _;
