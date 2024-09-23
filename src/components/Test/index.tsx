@@ -43,6 +43,7 @@ const TestPanel = (props: Props) => {
 								marginBottom: index !== 9 ? 16 : undefined,
 								borderRadius: 32,
 								textAlign: 'center',
+								boxSizing: 'border-box',
 							}}
 						>
 							{index + 1}. Lorem ipsum, dolor sit amet consectetur adipisicing elit.
