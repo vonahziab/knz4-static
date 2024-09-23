@@ -27,7 +27,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				setTimeout(() => {
 					router.goForward('main');
 				}, 500);
-			}, 50 + 500 + 5000);
+			}, 50 + 500 + 50);
 		}
 	}, []);
 
