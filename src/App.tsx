@@ -1,7 +1,13 @@
 import config from 'config';
+import usePlatform from 'hooks/usePlatform';
 import { FC } from 'react';
 
 const App: FC = () => {
+	const { platform } = usePlatform();
+
+	const safeAreaInsetBottom =
+		platform === 'tg' ? 'var(--tg-safe-area-inset-bottom)' : 'env(safe-area-inset-bottom)';
+
 	return (
 		<div>
 			<div
@@ -17,7 +23,7 @@ const App: FC = () => {
 					color: 'white',
 					backgroundColor: '#0E0D0B',
 					padding: '16px 16px 0px',
-					paddingBottom: 'calc(var(--safe-area-inset-bottom) + 16px)',
+					paddingBottom: `calc(${safeAreaInsetBottom} + 16px)`,
 					boxSizing: 'border-box',
 				}}
 			>
@@ -31,7 +37,7 @@ const App: FC = () => {
 				>
 					{/* <div
 						style={{
-							height: 'var(--safe-area-inset-bottom)',
+							height: safeAreaInsetBottom,
 							width: '100%',
 							backgroundColor: 'orange',
 							marginBottom: 16,
@@ -69,7 +75,7 @@ const App: FC = () => {
 					zIndex: 999,
 					fontSize: 8,
 					color: 'rgba(255, 255, 255, 0.2)',
-					paddingBottom: 'var(--safe-area-inset-bottom)',
+					paddingBottom: safeAreaInsetBottom,
 				}}
 			>
 				<div style={{ padding: 4 }}>{config.version}</div>
@@ -81,7 +87,7 @@ const App: FC = () => {
 					position: 'fixed',
 					left: 0,
 					bottom: 0,
-					paddingBottom: 'var(--safe-area-inset-bottom)',
+					paddingBottom: safeAreaInsetBottom,
 					backgroundColor: '#0E0D0B',
 				}}
 			>

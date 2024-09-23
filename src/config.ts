@@ -3,7 +3,7 @@ const config = {
 		domain: 'https://api.koinz.ru',
 	},
 	links: {},
-	version: '0.22',
+	version: '0.24',
 };
 
 export default config;
