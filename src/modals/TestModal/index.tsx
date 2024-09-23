@@ -6,7 +6,8 @@ import './index.css';
 
 const TestModal = ({ router, id }: ModalProps) => {
 	useEffect(() => {
-		(getWebApp() as any)?.disableVerticalSwipes();
+		getWebApp().disableVerticalSwipes();
+		return () => getWebApp().enableVerticalSwipes();
 	}, []);
 
 	return (
