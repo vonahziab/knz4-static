@@ -15,4 +15,12 @@
 	--gold_color: #FFCF40;
 	--silver_color: #C0C0C0;
 	--bronze_color: #CD7F32;
+
+	--skeleton_base_color: #444;
+	--skeleton_highlight_color: #202020;
+}
+
+/* Анимации */
+:root {
+	--default_transition: 'all .2s ease';
 }

@@ -1,37 +1,24 @@
-import Tabbar from 'components/Tabbar';
-import TestPanel from 'components/Test';
-import VersionBlock from 'components/VersionBlock';
-import config from 'config';
 import getWebApp from 'functions/getWebApp';
 import { FC, useEffect } from 'react';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import { Router, useRouter } from 'router';
 
 const App: FC = () => {
 	useEffect(() => {
 		const WebApp = getWebApp();
-		console.log(WebApp);
-
 		WebApp.ready();
-
-		const themeChanged = () => {
-			if (WebApp.isVersionAtLeast('6.9')) {
-				WebApp.setHeaderColor(config.colors.header);
-			} else {
-				console.log('.setHeaderColor unavailable');
-			}
-		};
-
-		themeChanged();
-
-		WebApp.onEvent('themeChanged', themeChanged);
-		return () => WebApp.offEvent('themeChanged', themeChanged);
 	}, []);
 
+	const router = useRouter();
+
 	return (
-		<>
-			<TestPanel />
-			<VersionBlock />
-			<Tabbar />
-		</>
+		<SkeletonTheme
+			baseColor="var(--skeleton_base_color)"
+			highlightColor="var(--skeleton_highlight_color)"
+		>
+			<Router router={router} />
+		</SkeletonTheme>
+		// 	<TestPanel />
 	);
 };
 

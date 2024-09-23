@@ -1,0 +1,66 @@
+.TabbarWrapper {
+	position: fixed;
+	height: 56px;
+	width: 100%;
+	left: 0px;
+	bottom: 0px;
+	background-color: var(--bg_color);
+	border-top: solid 1px var(--bg_color_2);
+	z-index: 998px;
+}
+
+.Tabbar {
+	height: 56px;
+	width: 100%;
+	display: flex;
+	/* justify-content: space-between;
+	align-items: center;
+	background-color: var(--bg_color);
+	color: var(--text_color);
+	font-size: 24px; */
+}
+
+.TabbarItem {
+	display: flex;
+	flex: 1;
+	gap: 4px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: var(--default_transition);
+	cursor: pointer;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.TabbarItemIcon, .TabbarItemIcon-selected {
+	color: var(--hint_color);
+	transition: var(--default_transition);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.TabbarItemIcon-selected {
+	color: var(--primary_color);
+}
+
+.TabbarItemText, .TabbarItemText-selected {
+	color: var(--hint_color);
+	transition: var(--default_transition);
+	font-size: 12px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	padding-left: 4px;
+	padding-right: 4px;
+	text-wrap: nowrap;
+}
+
+.TabbarItemText-selected {
+	color: var(--text_color);
+}

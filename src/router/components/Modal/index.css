@@ -1,0 +1,10 @@
+.Modal_CloseBtn {
+	transition: all 0.2s ease;
+	cursor: pointer;
+
+}
+
+.Modal_CloseBtn:active {
+	opacity: 0.7;
+
+}
