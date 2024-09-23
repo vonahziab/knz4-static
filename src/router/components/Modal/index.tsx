@@ -100,7 +100,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 				borderBottomLeftRadius: 0,
 				borderBottomRightRadius: 0,
 				overflowY: 'scroll',
-				transition: 'all 0.2s ease',
+				transition: 'var(--default_transition)',
 				transform: 'translateY(100%)',
 				...style,
 			}}
