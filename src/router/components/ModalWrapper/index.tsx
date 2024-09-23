@@ -2,6 +2,7 @@ import { HTMLAttributes, useEffect } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { app_modal_swipe_enabled } from 'router/state';
 import { IRouter } from 'router/types';
+import './index.css';
 
 interface Props extends HTMLAttributes<HTMLElement> {
 	router: IRouter;
@@ -35,23 +36,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 	}, []);
 
 	return (
-		<div
-			id="ModalWrapper"
-			style={{
-				position: 'fixed',
-				bottom: 0,
-				right: 0,
-				top: 0,
-				left: 0,
-				backgroundColor: 'rgba(0, 0, 0, .8)',
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'end',
-				zIndex: 1001,
-				transition: 'all 0.2s ease',
-			}}
-			onClick={() => _closeListener()}
-		>
+		<div id="ModalWrapper" onClick={() => _closeListener()}>
 			{children}
 		</div>
 	);

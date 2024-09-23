@@ -1,8 +1,6 @@
 import usePlatform from 'hooks/usePlatform';
 
-const useSafeInsets = (): {
-	bottom: string;
-} => {
+const useSafeInsets = () => {
 	const { platform } = usePlatform();
 
 	const safeAreaInsetBottom =

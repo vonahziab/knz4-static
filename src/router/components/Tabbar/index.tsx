@@ -1,4 +1,4 @@
-import getWebApp from 'functions/getWebApp';
+import useHaptic from 'hooks/useHaptic';
 import useSafeInsets from 'hooks/useSafeInsets';
 import VersionBlock from 'router/components/VersionBlock';
 import routes, { AppView } from 'router/routes';
@@ -6,10 +6,10 @@ import { IRouter } from 'router/types';
 import './index.css';
 
 const Tabbar = ({ router }: { router: IRouter }) => {
-	const WebApp = getWebApp();
+	const haptic = useHaptic();
 
 	const handleClick = (id: AppView) => {
-		WebApp?.HapticFeedback.selectionChanged();
+		haptic.selection();
 		router.setView(id);
 	};
 
