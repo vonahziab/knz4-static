@@ -1,4 +1,4 @@
-import getWebApp from 'functions/getWebApp';
+import getWebApp from 'functions/TG/getWebApp';
 
 export type Platform = 'tg' | 'vk' | 'web';
 

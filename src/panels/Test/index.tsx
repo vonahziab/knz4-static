@@ -12,6 +12,14 @@ const Test = ({ id, router }: PanelProps) => {
 			>
 				Назад
 			</button>
+			<button
+				style={{
+					marginBottom: 16,
+				}}
+				onClick={() => router.setModal('test')}
+			>
+				Модалка
+			</button>
 			{new Array(10).fill(true).map((i, index) => {
 				return (
 					<div

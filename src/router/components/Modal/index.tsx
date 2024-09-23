@@ -50,13 +50,13 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			}
 
 			if (DeltaY === 50) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--hint_color)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
 				if (enabledSwipeBack) {
 					haptic.impact.rigid();
 				}
 				setEnabledSwipeBack(false);
 			} else {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_4)';
 				setEnabledSwipeBack(true);
 			}
 
@@ -72,7 +72,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			setDY(0);
 
 			if (ModalSwipeHandler) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_6)';
 			}
 		};
 
@@ -86,6 +86,33 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 		};
 	}, [y, dY, enabledSwipeBack]);
 
+	const ots = (e: React.TouchEvent<HTMLDivElement>) => {
+		const target = e.currentTarget;
+		target.style.color = 'var(--bg_color_3)';
+	};
+
+	const ote = (e: React.TouchEvent<HTMLDivElement>) => {
+		const target = e.currentTarget;
+		setTimeout(() => {
+			target.style.color = 'var(--bg_color_6)';
+		}, 150);
+	};
+
+	const oc = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+		const target = e.currentTarget;
+		target.style.color = 'var(--bg_color_3)';
+
+		setTimeout(() => {
+			target.style.color = 'var(--bg_color_6)';
+		}, 150);
+
+		setTimeout(() => {
+			e.stopPropagation();
+			e.preventDefault();
+			_closeListener();
+		}, 200);
+	};
+
 	return (
 		<div
 			id={id}
@@ -93,7 +120,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 				// paddingBottom: 20,
 				maxHeight: '100%',
 				width: '100%',
-				backgroundColor: 'var(--secondary_bg_color)',
+				backgroundColor: 'var(--bg_color)',
 				display: 'block',
 				boxSizing: 'border-box',
 				borderRadius: 16,
@@ -130,7 +157,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 						style={{
 							height: 5,
 							width: 36,
-							backgroundColor: 'var(--bg_color_3)',
+							backgroundColor: 'var(--bg_color_6)',
 							borderRadius: 2.5,
 						}}
 					/>
@@ -160,21 +187,23 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 						</div>
 						<div
 							className="Modal_CloseBtn"
-							style={{ height: 30, width: 30 }}
-							onClick={e => {
-								e.stopPropagation();
-								e.preventDefault();
-								_closeListener();
+							onTouchStart={e => ots(e)}
+							onTouchEnd={e => ote(e)}
+							onClick={e => oc(e)}
+							style={{
+								height: 30,
+								width: 30,
+								color: 'var(--bg_color_6)',
 							}}
 						>
-							<IoCloseCircle size={30} color="var(--bg_color_3)" />
+							<IoCloseCircle size={30} />
 						</div>
 					</div>
 				)}
 				{header && (
 					<hr
 						style={{
-							height: '1px',
+							height: 1,
 							width: '100%',
 							border: 'none',
 							backgroundColor: 'var(--bg_color_3)',

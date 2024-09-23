@@ -1,4 +1,4 @@
-import getWebApp from 'functions/getWebApp';
+import getWebApp from 'functions/TG/getWebApp';
 import usePlatform from 'hooks/usePlatform';
 
 const useHaptic = () => {

@@ -8,13 +8,20 @@
 	--bg_color: #0E0D0B;
 	--bg_color_2: #181715;
 	--bg_color_3: #22211F;
+	--bg_color_4: #333230;
+	--bg_color_5: #3D3C3A;
+	--bg_color_6: #494846;
+
 	--primary_color: #FFBE00;
 	--hint_color: #9E9E9E;
 	--text_color: #FFFEFF;
 	--link_color: #03A9F4;
+
 	--gold_color: #FFCF40;
 	--silver_color: #C0C0C0;
 	--bronze_color: #CD7F32;
+	--green_color: #34C759;
+	--red_color: #F15959;
 
 	--skeleton_base_color: #444;
 	--skeleton_highlight_color: #202020;

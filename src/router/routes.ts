@@ -1,3 +1,4 @@
+import TestModal from 'modals/TestModal';
 import Main from 'panels/Main';
 import Test from 'panels/Test';
 import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
@@ -8,7 +9,12 @@ export type AppModal = 'test';
 export type AppPanel = 'test' | 'main';
 
 const routes: IRoutes = {
-	modals: [],
+	modals: [
+		{
+			id: 'test',
+			modal: TestModal,
+		},
+	],
 	views: [
 		{
 			id: 'main',

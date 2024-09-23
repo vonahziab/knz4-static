@@ -1,4 +1,4 @@
-import { TelegramWebApps } from '../../../public/scripts/webapp';
+import { TelegramWebApps } from '../../../../public/scripts/webapp';
 
 const getWebApp = () => {
 	const Telegram = (window as unknown as any).Telegram as TelegramWebApps.SDK;

@@ -1,5 +1,5 @@
 import config from 'config';
-import getWebApp from 'functions/getWebApp';
+import getWebApp from 'functions/TG/getWebApp';
 import { FC, useEffect } from 'react';
 import { Router, useRouter } from 'router';
 import { getViewIdFromName } from 'router/methods/handle';
