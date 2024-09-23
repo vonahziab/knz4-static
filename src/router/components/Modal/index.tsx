@@ -95,7 +95,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 		const target = e.currentTarget;
 		setTimeout(() => {
 			target.style.color = 'var(--bg_color_6)';
-		}, 150);
+		}, 50);
 	};
 
 	const oc = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -107,11 +107,11 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 
 		setTimeout(() => {
 			target.style.color = 'var(--bg_color_6)';
-		}, 150);
+		}, 50);
 
 		setTimeout(() => {
 			_closeListener();
-		}, 200);
+		}, 100);
 	};
 
 	return (
