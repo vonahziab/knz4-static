@@ -65,15 +65,14 @@ const App: FC = () => {
 				style={{
 					position: 'fixed',
 					bottom: 0,
+					right: 0,
 					zIndex: 999,
-					fontSize: 10,
-					width: '100%',
-					textAlign: 'end',
+					fontSize: 8,
 					color: 'rgba(255, 255, 255, 0.1)',
 					paddingBottom: 'var(--safe-area-inset-bottom)',
 				}}
 			>
-				<div style={{ padding: 4 }}>версия {config.version}</div>
+				<div style={{ padding: 4 }}>{config.version}</div>
 			</div>
 			<div
 				style={{
