@@ -13,6 +13,16 @@ process.env.NODE_ENV !== 'development' &&
 	document.addEventListener('contextmenu', e => e.preventDefault());
 
 root.render(
+	// <LanguageProvider
+	// 	defaultValue={{
+	// 		title: 'string',
+	// 		description: 'string',
+	// 		value: 'string',
+	// 		words: {
+	// 			one: 'one',
+	// 		},
+	// 	}}
+	// >
 	<RecoilRoot>
 		<SkeletonTheme
 			baseColor="var(--skeleton_base_color)"
@@ -21,4 +31,5 @@ root.render(
 			<App />
 		</SkeletonTheme>
 	</RecoilRoot>
+	// </LanguageProvider>
 );

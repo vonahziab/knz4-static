@@ -6,7 +6,6 @@ import './index.css';
 
 const Loader = ({ id, router }: PanelProps) => {
 	const { bottom } = useSafeInsets();
-
 	const [showTextLoading, setShowTextLoading] = useState(false);
 
 	useEffect(() => {
