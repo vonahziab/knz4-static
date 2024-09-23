@@ -16,7 +16,7 @@ const App: FC = () => {
 					color: 'white',
 					backgroundColor: 'rgba(0, 0, 0)',
 					padding: '16px 16px 0px',
-					paddingBottom: 'calc(var(safe-area-inset-bottom) + 16px)',
+					paddingBottom: 'calc(var(--safe-area-inset-bottom) + 16px)',
 					boxSizing: 'border-box',
 				}}
 			>
@@ -26,9 +26,11 @@ const App: FC = () => {
 						flexDirection: 'column',
 						gap: 16,
 						boxSizing: 'border-box',
+						paddingBottom: 100,
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.12</div>
+					<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.13</div>
+
 					<div
 						style={{
 							height: 24,
@@ -44,6 +46,21 @@ const App: FC = () => {
 							backgroundColor: 'orange',
 						}}
 					/>
+
+					{new Array(15).fill(1).map((i, index) => {
+						return (
+							<div
+								key={index}
+								style={{
+									height: 100,
+									width: '100%',
+									backgroundColor: 'blue',
+								}}
+							>
+								{index + 1}
+							</div>
+						);
+					})}
 				</div>
 			</div>
 			<div
