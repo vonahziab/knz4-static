@@ -1,3 +1,4 @@
+import useHaptic from 'hooks/useHaptic';
 import { useEffect, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IRouter } from 'router/types';
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Props) => {
-	// const haptic = useHaptic();
+	const haptic = useHaptic();
 
 	const [showIconBack, setShowIconBack] = useState(false);
 
@@ -62,8 +63,7 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 				onSwipeBack
 			) {
 				onSwipeBack();
-				// haptic.impact.light();
-				// getWebApp()?.HapticFeedback.impactOccurred('light');
+				haptic.impact.light();
 				console.log(1);
 				setShowIconBack(true);
 				setEnabledSwipeBack(false);

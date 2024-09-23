@@ -1,3 +1,4 @@
+import useHaptic from 'hooks/useHaptic';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { IoCloseCircle } from 'react-icons/io5';
 import { AppModal } from 'router/routes';
@@ -11,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const Modal = ({ id, children, style, router, header }: Props) => {
-	// const haptic = useHaptic();
+	const haptic = useHaptic();
 
 	const [y, setY] = useState(0);
 	const [dY, setDY] = useState(0);
@@ -51,7 +52,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			if (DeltaY === 50) {
 				ModalSwipeHandler.style.backgroundColor = 'var(--hint_color)';
 				if (enabledSwipeBack) {
-					//haptic.impact.rigid();
+					haptic.impact.rigid();
 				}
 				setEnabledSwipeBack(false);
 			} else {

@@ -1,3 +1,4 @@
+import useHaptic from 'hooks/useHaptic';
 import useSafeInsets from 'hooks/useSafeInsets';
 import VersionBlock from 'router/components/VersionBlock';
 import routes, { AppView } from 'router/routes';
@@ -5,10 +6,10 @@ import { IRouter } from 'router/types';
 import './index.css';
 
 const Tabbar = ({ router }: { router: IRouter }) => {
-	// const haptic = useHaptic();
+	const haptic = useHaptic();
 
 	const handleClick = (id: AppView) => {
-		// haptic.selection();
+		haptic.selection();
 		router.setView(id);
 	};
 
