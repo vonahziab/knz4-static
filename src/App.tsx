@@ -14,7 +14,7 @@ const App: FC = () => {
 					left: '0',
 
 					color: 'white',
-					backgroundColor: 'rgba(0, 0, 0, 0.8)',
+					backgroundColor: 'rgba(0, 0, 0)',
 					padding: '16px 16px 0px',
 					paddingBottom: 'calc(var(safe-area-inset-bottom) + 16px)',
 					boxSizing: 'border-box',
@@ -28,7 +28,7 @@ const App: FC = () => {
 						boxSizing: 'border-box',
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.11</div>
+					<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.12</div>
 					<div
 						style={{
 							height: 24,
