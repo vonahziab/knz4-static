@@ -44,7 +44,8 @@ export const useSetView: () => _UseSetView = () => {
 		}
 
 		const viewId = getViewIdFromName(actionView);
-		const { startPanel } = routes.views[viewId];
+		// const { startPanel } = routes.views[viewId];
+		const startPanel = history[viewId][0];
 
 		setHistory(historyClear(history, startPanel, viewId));
 		setPanel(panelClear(panel, startPanel, viewId));
