@@ -18,7 +18,6 @@ const App: FC = () => {
 		>
 			<Router router={router} />
 		</SkeletonTheme>
-		// 	<TestPanel />
 	);
 };
 

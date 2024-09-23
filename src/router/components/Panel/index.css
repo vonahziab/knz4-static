@@ -1,0 +1,18 @@
+.PanelWrapper {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	top: 0px;
+	left: 0px;
+	overflow: scroll;
+	background-color: var(--bg_color);
+	color: var(--text_color);
+}
+
+.Panel {
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+}
