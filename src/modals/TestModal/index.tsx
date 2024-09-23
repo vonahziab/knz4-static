@@ -1,10 +1,13 @@
 import getWebApp from 'functions/TG/getWebApp';
+import useSafeInsets from 'hooks/useSafeInsets';
 import { useEffect } from 'react';
 import Modal from 'router/components/Modal';
 import { ModalProps } from 'router/types';
 import './index.css';
 
 const TestModal = ({ router, id }: ModalProps) => {
+	const { bottom } = useSafeInsets();
+
 	useEffect(() => {
 		getWebApp().disableVerticalSwipes();
 		return () => getWebApp().enableVerticalSwipes();
@@ -18,6 +21,7 @@ const TestModal = ({ router, id }: ModalProps) => {
 				style={{
 					display: 'inline-block',
 					padding: 16,
+					paddingBottom: `calc(${bottom} + 16px)`,
 					width: '100%',
 					boxSizing: 'border-box',
 					overflow: 'hidden',
