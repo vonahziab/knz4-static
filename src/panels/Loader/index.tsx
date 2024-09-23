@@ -1,4 +1,4 @@
-import KoinzTextLogo from 'components/KoinzTextLogo';
+import KoinzTextLogo from 'components/blocks/KoinzTextLogo';
 import useSafeInsets from 'hooks/useSafeInsets';
 import { useEffect, useState } from 'react';
 import { Panel } from 'router';
