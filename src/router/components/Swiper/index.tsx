@@ -121,14 +121,10 @@ const Swiper = ({
 				style={{
 					width: CIRCLE_WIDTH / 3 + 6,
 					height: CIRCLE_WIDTH / 3,
+					opacity: showIconBack ? 0.9 : 0.2,
 				}}
 			>
-				{showIconBack && (
-					<IoIosArrowBack
-						size={(CIRCLE_WIDTH / 3) * 0.9}
-						color={'var(--primary_color)'}
-					/>
-				)}
+				<IoIosArrowBack size={(CIRCLE_WIDTH / 3) * 0.9} color={'var(--primary_color)'} />
 			</div>
 		</div>
 	);
