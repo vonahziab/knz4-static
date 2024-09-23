@@ -1,6 +1,6 @@
-import VersionBlock from 'components/VersionBlock';
 import getWebApp from 'functions/getWebApp';
 import useSafeInsets from 'hooks/useSafeInsets';
+import VersionBlock from 'router/components/VersionBlock';
 import routes from 'router/routes';
 import { AppView, IRouter } from 'router/types';
 import './index.css';
