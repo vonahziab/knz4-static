@@ -8,7 +8,7 @@ export const app_tabbar_show = atom<boolean>({
 
 export const app_view = atom<AppView>({
 	key: 'app_view',
-	default: 'main',
+	default: routes.startView,
 });
 
 export const app_view_history = atom<AppPanel[][]>({

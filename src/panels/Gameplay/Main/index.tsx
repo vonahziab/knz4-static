@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Panel } from 'router';
 import { PanelProps } from 'router/types';
 
-const Test = ({ id, router }: PanelProps) => {
+const Main = ({ id, router }: PanelProps) => {
 	useEffect(() => {
 		router.setTabbarShow(true);
 	}, []);
@@ -29,4 +29,4 @@ const Test = ({ id, router }: PanelProps) => {
 	);
 };
 
-export default Test;
+export default Main;

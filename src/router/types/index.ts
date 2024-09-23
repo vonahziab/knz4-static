@@ -15,6 +15,7 @@ export type _UseSetTabbarShow = (value: boolean) => void;
 export type _UseCloseModal = () => void;
 
 export interface IRoutes {
+	startView: AppView,
 	modals: {
 		id: AppModal;
 		modal: (props: ModalProps) => JSX.Element;
