@@ -1,9 +1,7 @@
-import useSafeInsets from 'hooks/useSafeInsets';
-
 type Props = {};
 
 const TestPanel = (props: Props) => {
-	const { bottom } = useSafeInsets();
+	// const { bottom } = useSafeInsets();
 
 	return (
 		<div
@@ -18,15 +16,16 @@ const TestPanel = (props: Props) => {
 				backgroundColor: 'var(--bg_color)',
 				color: 'var(--text_color)',
 				boxSizing: 'border-box',
-				padding: '16px 16px 0px',
-				paddingBottom: `calc(${bottom} + 16px)`,
+				// padding: '16px 16px 0px',
+				// paddingBottom: `calc(${bottom} + 16px)`,
 			}}
 		>
 			<div
 				style={{
 					display: 'flex',
 					flexDirection: 'column',
-					paddingBottom: 64,
+					padding: 16,
+					paddingBottom: 16 + 64,
 				}}
 			>
 				{new Array(10).fill(true).map((i, index) => {
