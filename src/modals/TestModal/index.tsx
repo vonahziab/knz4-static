@@ -1,8 +1,14 @@
+import getWebApp from 'functions/TG/getWebApp';
+import { useEffect } from 'react';
 import Modal from 'router/components/Modal';
 import { ModalProps } from 'router/types';
 import './index.css';
 
 const TestModal = ({ router, id }: ModalProps) => {
+	useEffect(() => {
+		(getWebApp() as any)?.disableVerticalSwipes();
+	}, []);
+
 	return (
 		<Modal id={id} router={router} header={'Test'}>
 			<div
