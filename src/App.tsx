@@ -8,16 +8,22 @@ import { FC, useEffect } from 'react';
 const App: FC = () => {
 	useEffect(() => {
 		const WebApp = getWebApp();
+		console.log(WebApp);
+
 		WebApp.ready();
 
 		const themeChanged = () => {
-			if (WebApp?.isVersionAtLeast('6.9')) {
-				WebApp?.setHeaderColor(config.colors.header);
+			if (WebApp.isVersionAtLeast('6.9')) {
+				WebApp.setHeaderColor(config.colors.header);
+			} else {
+				console.log('.setHeaderColor unavailable');
 			}
 		};
 
-		WebApp?.onEvent('themeChanged', themeChanged);
-		return () => WebApp?.offEvent('themeChanged', themeChanged);
+		themeChanged();
+
+		WebApp.onEvent('themeChanged', themeChanged);
+		return () => WebApp.offEvent('themeChanged', themeChanged);
 	}, []);
 
 	return (
