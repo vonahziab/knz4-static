@@ -18,7 +18,7 @@ const Test = ({ id, router }: PanelProps) => {
 							padding: 16,
 							width: '100%',
 							backgroundColor: 'var(--bg_color_2)',
-							border: '1px solid var(--bg_color_3)',
+							border: '1px solid var(--border_color)',
 							borderRadius: 32,
 							textAlign: 'center',
 							boxSizing: 'border-box',

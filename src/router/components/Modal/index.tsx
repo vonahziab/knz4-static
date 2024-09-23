@@ -50,13 +50,13 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			}
 
 			if (DeltaY === 50) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_3)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--modal_swipe_handler_action)';
 				if (enabledSwipeBack) {
 					haptic.impact.rigid();
 				}
 				setEnabledSwipeBack(false);
 			} else {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_4)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--modal_swipe_handler_drag)';
 				setEnabledSwipeBack(true);
 			}
 
@@ -72,7 +72,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 			setDY(0);
 
 			if (ModalSwipeHandler) {
-				ModalSwipeHandler.style.backgroundColor = 'var(--bg_color_5)';
+				ModalSwipeHandler.style.backgroundColor = 'var(--modal_swipe_handler)';
 			}
 		};
 
@@ -88,13 +88,13 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 
 	const ots = (e: React.TouchEvent<HTMLDivElement>) => {
 		const target = e.currentTarget;
-		target.style.color = 'var(--bg_color_3)';
+		target.style.color = 'var(--modal_exit_button_click)';
 	};
 
 	const ote = (e: React.TouchEvent<HTMLDivElement>) => {
 		const target = e.currentTarget;
 		setTimeout(() => {
-			target.style.color = 'var(--bg_color_5)';
+			target.style.color = 'var(--modal_exit_button)';
 		}, 50);
 	};
 
@@ -103,10 +103,10 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 		e.preventDefault();
 
 		const target = e.currentTarget;
-		target.style.color = 'var(--bg_color_3)';
+		target.style.color = 'var(--modal_exit_button_click)';
 
 		setTimeout(() => {
-			target.style.color = 'var(--bg_color_5)';
+			target.style.color = 'var(--modal_exit_button)';
 		}, 50);
 
 		setTimeout(() => {
@@ -158,7 +158,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 						style={{
 							height: 5,
 							width: 36,
-							backgroundColor: 'var(--bg_color_5)',
+							backgroundColor: 'var(--modal_swipe_handler)',
 							borderRadius: 2.5,
 						}}
 					/>
@@ -194,7 +194,7 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 							style={{
 								height: 30,
 								width: 30,
-								color: 'var(--bg_color_5)',
+								color: 'var(--modal_exit_button)',
 							}}
 						>
 							<IoCloseCircle size={30} />
@@ -207,8 +207,8 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 							height: 1,
 							width: '100%',
 							border: 'none',
-							backgroundColor: 'var(--bg_color_3)',
-							color: 'var(--bg_color_3)',
+							backgroundColor: 'var(--border_color)',
+							color: 'var(--border_color)',
 							...style,
 						}}
 					/>

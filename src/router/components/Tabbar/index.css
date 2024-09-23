@@ -5,7 +5,7 @@
 	left: 0px;
 	bottom: 0px;
 	background-color: var(--bg_color);
-	border-top: solid 1px var(--bg_color_2);
+	border-top: solid 1px var(--border_color);
 	z-index: 999;
 }
 
@@ -13,11 +13,6 @@
 	height: 56px;
 	width: 100%;
 	display: flex;
-	/* justify-content: space-between;
-	align-items: center;
-	background-color: var(--bg_color);
-	color: var(--text_color);
-	font-size: 24px; */
 }
 
 .TabbarItem {
@@ -34,7 +29,7 @@
 }
 
 .TabbarItemIcon, .TabbarItemIcon-selected {
-	color: var(--hint_color);
+	color: var(--inactive_color);
 	transition: var(--default_transition);
 	display: flex;
 	justify-content: center;
@@ -47,7 +42,7 @@
 }
 
 .TabbarItemText, .TabbarItemText-selected {
-	color: var(--hint_color);
+	color: var(--inactive_color);
 	transition: var(--default_transition);
 	font-size: 12px;
 
@@ -62,7 +57,7 @@
 }
 
 .TabbarItemText-selected {
-	color: var(--text_color);
+	color: var(--primary_color);
 }
 
 .VersionBlock {

@@ -2,13 +2,21 @@ body[scheme=dark] {
 	--bg_color: #0E0D0B;
 	--bg_color_2: #181715;
 	--bg_color_3: #22211F;
-	
-	--bg_color_4: #333230;
-	--bg_color_5: #494846;
+	/* #494846 #333230 #22211F */
+
+	--border_color: #22211F;
+	--inactive_color: #9E9E9E;
 
 	--text_color: #FFFEFF;
 	--hint_color: #9E9E9E;
 
 	--skeleton_base_color: #444444;
 	--skeleton_highlight_color: #202020;
+
+	--modal_swipe_handler: #494846;
+	--modal_swipe_handler_drag: #333230;
+	--modal_swipe_handler_action: #22211F;
+
+	--modal_exit_button: #494846;
+	--modal_exit_button_click: #22211F;
 }
