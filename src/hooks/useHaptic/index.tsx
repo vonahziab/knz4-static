@@ -7,12 +7,16 @@ const useHaptic = () => {
 
 	const impact_light =
 		platform === 'tg' ? () => WebApp.HapticFeedback.impactOccurred('light') : () => {};
+
 	const impact_medium =
 		platform === 'tg' ? () => WebApp.HapticFeedback.impactOccurred('medium') : () => {};
+
 	const impact_heavy =
 		platform === 'tg' ? () => WebApp.HapticFeedback.impactOccurred('heavy') : () => {};
+
 	const impact_rigid =
 		platform === 'tg' ? () => WebApp.HapticFeedback.impactOccurred('rigid') : () => {};
+
 	const impact_soft = platform === 'tg' ? WebApp.HapticFeedback.impactOccurred('soft') : () => {};
 
 	const notification_success =

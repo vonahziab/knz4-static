@@ -1,11 +1,12 @@
 import App from 'App';
+import eruda from 'eruda';
 import { createRoot } from 'react-dom/client';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { RecoilRoot } from 'recoil';
 import 'styles/index.css';
 
-// process.env.NODE_ENV === 'development' && eruda.init();
+process.env.NODE_ENV === 'development' && eruda.init();
 const app = document.getElementById('app');
 const root = createRoot(app as HTMLElement);
 
