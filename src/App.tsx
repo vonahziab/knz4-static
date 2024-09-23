@@ -25,10 +25,10 @@ const App: FC = () => {
 						display: 'flex',
 						flexDirection: 'column',
 						boxSizing: 'border-box',
-						paddingBottom: 100,
+						paddingBottom: 64,
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.15</div>
+					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.16</div>
 
 					<div
 						style={{
@@ -63,7 +63,7 @@ const App: FC = () => {
 			</div>
 			<div
 				style={{
-					height: 100,
+					height: 64,
 					width: '100vw',
 					position: 'fixed',
 					left: 0,
@@ -74,7 +74,7 @@ const App: FC = () => {
 			>
 				<div
 					style={{
-						height: 100,
+						height: 64,
 						width: '100%',
 						display: 'flex',
 						justifyContent: 'center',
