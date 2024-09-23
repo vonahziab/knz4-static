@@ -28,7 +28,7 @@ const App: FC = () => {
 						paddingBottom: 100,
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.14</div>
+					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.15</div>
 
 					<div
 						style={{
@@ -48,7 +48,7 @@ const App: FC = () => {
 									justifyContent: 'center',
 									alignItems: 'center',
 
-									height: 50,
+									height: 200,
 									width: '100%',
 									backgroundColor: 'blue',
 									marginBottom: index !== 14 ? 16 : undefined,
