@@ -13,6 +13,7 @@ import {
 	_UseGoBack,
 	_UseGoForward,
 	_UseSetModal,
+	_UseSetPanel,
 	_UseSetPopout,
 	_UseSetTabbarShow,
 	_UseSetView,
@@ -63,6 +64,23 @@ export const useGoForward: () => _UseGoForward = () => {
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 		if (panel[_viewId] !== actionPanel) {
 			setHistory(historyPush(history, _viewId, actionPanel));
+			setPanel(panelSet(panel, _viewId, actionPanel));
+		}
+	};
+
+	return _;
+};
+
+export const useSetPanel: () => _UseSetPanel = () => {
+	const [panel, setPanel] = useRecoilState(app_panel);
+	const [history, setHistory] = useRecoilState(app_view_history);
+	const activeView = useRecoilValue(app_view);
+	const viewId = getViewIdFromName(activeView); // открытая view
+
+	const _: _UseSetPanel = (actionPanel, __viewId = -1) => {
+		const _viewId = __viewId >= 0 ? __viewId : viewId;
+		if (panel[_viewId] !== actionPanel) {
+			setHistory(historyPush(historyPop(history, _viewId), _viewId, actionPanel));
 			setPanel(panelSet(panel, _viewId, actionPanel));
 		}
 	};

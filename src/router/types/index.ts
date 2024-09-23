@@ -7,6 +7,7 @@ export type ModalProps = { id: AppModal; router: IRouter };
 // * Хуки роутера
 export type _UseSetView = (actionView: AppView) => void;
 export type _UseGoForward = (panel_id: AppPanel, __viewId?: number) => void;
+export type _UseSetPanel = (panel_id: AppPanel, __viewId?: number) => void;
 export type _UseGoBack = (__viewId?: number) => void;
 export type _UseSetPopout = (Popout?: JSX.Element) => void;
 export type _UseSetModal = (modal_id?: AppModal) => void;
@@ -35,6 +36,7 @@ export interface IRouter {
 	goForward: _UseGoForward;
 	goBack: _UseGoBack;
 	setView: _UseSetView;
+	setPanel: _UseSetPanel;
 	setPopout: _UseSetPopout;
 	setModal: _UseSetModal;
 	closeModal: _UseCloseModal;

@@ -25,7 +25,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				Loader_Element3.style.transform = 'translateY(54px)';
 				Loader_Element3.style.opacity = '0';
 				setTimeout(() => {
-					router.goForward('main');
+					router.setPanel('main');
 				}, 500);
 			}, 50 + 500 + 50);
 		}
