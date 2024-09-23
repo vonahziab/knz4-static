@@ -2,7 +2,7 @@ import TestModal from 'modals/TestModal';
 import GameplayMain from 'panels/Gameplay/Main';
 import HomeMain from 'panels/Home/Main';
 import IncomeMain from 'panels/Income/Main';
-import Loader from 'panels/PrePage/Loader';
+import SplashScreen from 'panels/PrePage/SplashScreen';
 import Test from 'panels/Single/Test';
 import TopMain from 'panels/Top/Main';
 import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
@@ -19,7 +19,7 @@ export type AppPanel =
 
 export type AppModal = 'test';
 
-type AppPanelPrePage = 'loader';
+type AppPanelPrePage = 'splash_screen';
 type AppPanelSingle = 'test';
 type AppPanelHome = 'home_main';
 type AppPanelIncome = 'income_main';
@@ -37,14 +37,14 @@ const routes: IRoutes = {
 	views: [
 		{
 			id: 'home',
-			startPanel: 'loader',
+			startPanel: 'splash_screen',
 			tabbar: {
 				icon: FaHouse,
 				iconSize: 24 + 8,
 			},
 			panels: [
+				{ id: 'splash_screen', panel: SplashScreen },
 				{ id: 'home_main', panel: HomeMain },
-				{ id: 'loader', panel: Loader },
 				{ id: 'test', panel: Test },
 			],
 		},

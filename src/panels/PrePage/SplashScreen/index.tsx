@@ -1,27 +1,33 @@
 import KoinzTextLogo from 'components/blocks/KoinzTextLogo';
 import useSafeInsets from 'hooks/useSafeInsets';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Panel } from 'router';
 import { PanelProps } from 'router/types';
 import './index.css';
 
-const Loader = ({ id, router }: PanelProps) => {
+const SplashScreen = ({ id, router }: PanelProps) => {
+	const { t } = useTranslation();
 	const { bottom } = useSafeInsets();
 	const [showTextLoading, setShowTextLoading] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => setShowTextLoading(true), 2550);
 
-		const PanelLoader_LogoWrappper = document.getElementById('PanelLoader_LogoWrappper');
-		const PanelLoader_LoadingText = document.getElementById('PanelLoader_LoadingText');
+		const PanelSplashScreen_LogoWrappper = document.getElementById(
+			'PanelSplashScreen_LogoWrappper'
+		);
+		const PanelSplashScreen_LoadingText = document.getElementById(
+			'PanelSplashScreen_LoadingText'
+		);
 
-		if (PanelLoader_LoadingText && PanelLoader_LogoWrappper) {
+		if (PanelSplashScreen_LoadingText && PanelSplashScreen_LogoWrappper) {
 			setTimeout(() => {
-				PanelLoader_LogoWrappper.style.transform = 'scale(0.9)';
-				PanelLoader_LogoWrappper.style.opacity = '0';
+				PanelSplashScreen_LogoWrappper.style.transform = 'scale(0.9)';
+				PanelSplashScreen_LogoWrappper.style.opacity = '0';
 
-				PanelLoader_LoadingText.style.transform = 'translateY(54px)';
-				PanelLoader_LoadingText.style.opacity = '0';
+				PanelSplashScreen_LoadingText.style.transform = 'translateY(54px)';
+				PanelSplashScreen_LoadingText.style.opacity = '0';
 				setTimeout(() => {
 					router.setTabbarShow(true);
 					router.setPanel('home_main');
@@ -40,21 +46,21 @@ const Loader = ({ id, router }: PanelProps) => {
 				alignItems: 'center',
 			}}
 		>
-			<div id="PanelLoader_LogoWrappper">
+			<div id="PanelSplashScreen_LogoWrappper">
 				<KoinzTextLogo />
-				<div id="PanelLoader_Logo_Version">v4.0</div>
+				<div id="PanelSplashScreen_Logo_Version">v4.0</div>
 			</div>
 			<div
-				id="PanelLoader_LoadingText"
+				id="PanelSplashScreen_LoadingText"
 				style={{
 					bottom: bottom,
 					opacity: showTextLoading ? 0.5 : 0,
 				}}
 			>
-				Загрузка
+				{t('splash_screen.loading')}
 			</div>
 		</Panel>
 	);
 };
 
-export default Loader;
+export default SplashScreen;
