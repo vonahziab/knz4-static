@@ -1,0 +1,59 @@
+.ARMUI_Button {
+	height: 50px;
+	font-size: 17px;
+	line-height: 21px;
+	font-weight: 600;
+
+	padding: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--armui-gap);
+	text-align: center;
+	border: none;
+	border-radius: 14px;
+	transition: all .2s ease;
+	outline: none;
+}
+
+.ARMUI_Button {
+	background-color: var(--accent_color);
+	color: white;
+}
+
+/* .ARMUI_Button:active { */
+/* background-color: var(--accent95_color); */
+/* opacity: 0.9; */
+/* } */
+
+.ARMUI_Button-disabled {
+	/* background-color: var(--accent95_color); */
+	opacity: 0.9;
+}
+
+.ARMUI_Button_spinner {
+	display: inline-flex;
+	width: 1em;
+	height: 1em;
+	border: 3px solid;
+	border-radius: 50%;
+	animation: armui-btn-spin 1s ease-in-out infinite;
+	-webkit-animation: armui-btn-spin 1s ease-in-out infinite;
+}
+
+.ARMUI_Button_spinner {
+	border-color: var(--accent_color);
+	border-top-color: var(--blue-200);
+}
+
+@keyframes armui-btn-spin {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes armui-btn-spin {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}

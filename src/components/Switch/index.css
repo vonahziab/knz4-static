@@ -1,0 +1,51 @@
+.ARMUI_Switch {
+	position: relative;
+	height: 30px;
+	width: 50px;
+}
+
+/* .ARMUI_Switch_Content {} */
+
+.ARMUI_Switch_Background {
+	position: absolute;
+	transition: all .15s ease;
+	transition-delay: .15s;
+	z-index: 1;
+	height: 30px;
+	width: 50px;
+	border-radius: 15px;
+	background-color: var(--hint50_color);
+}
+
+.ARMUI_Switch_Background-active {
+	background-color: var(--green);
+}
+
+.ARMUI_Switch_Circle {
+	position: absolute;
+	left: 0;
+	transition: all .3s ease;
+	z-index: 2;
+	height: 25px;
+	width: 25px;
+	margin: 2.5px;
+	border-radius: 12.5px;
+	background-color: white;
+}
+
+.ARMUI_Switch_Circle-active {
+	background-color: white;
+	left: 19.5px;
+}
+
+.ARMUI_Switch_spinner {
+	display: inline-flex;
+	width: 20px;
+	height: 20px;
+	border: 3px solid;
+	border-radius: 50%;
+	animation: armui-btn-spin 1s ease-in-out infinite;
+	-webkit-animation: armui-btn-spin 1s ease-in-out infinite;
+	border-color: GOLD;
+	border-top-color: GOLD;
+}
