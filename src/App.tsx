@@ -28,7 +28,11 @@ const App: FC = () => {
 			router.data.modal_id
 				? WebApp?.BackButton.offClick(router.closeModal)
 				: WebApp?.BackButton.offClick(router.goBack);
-	}, [router.data.activeView, router.data.modal_id]);
+	}, [
+		router.data.activeView,
+		router.data.history[getViewIdFromName(router.data.activeView)],
+		router.data.modal_id,
+	]);
 
 	return <Router router={router} />;
 };
