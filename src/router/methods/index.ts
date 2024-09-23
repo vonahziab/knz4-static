@@ -1,5 +1,4 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import routes from 'router/routes';
 import {
 	app_modal_id,
 	app_panel,
