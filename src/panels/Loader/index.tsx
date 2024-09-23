@@ -26,7 +26,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				setTimeout(() => {
 					router.setPanel('main');
 				}, 500);
-			}, 50 + 500 + 3000);
+			}, 50 + 500 + 200);
 		}
 	}, []);
 
