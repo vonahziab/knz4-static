@@ -8,6 +8,7 @@ import { FC, useEffect } from 'react';
 const App: FC = () => {
 	useEffect(() => {
 		const WebApp = getWebApp();
+		WebApp.ready();
 
 		const themeChanged = () => {
 			if (WebApp?.isVersionAtLeast('6.9')) {

@@ -6,7 +6,7 @@ const config = {
 		header: '#0E0D0B',
 	},
 	links: {},
-	version: '0.27',
+	version: '0.28',
 };
 
 export default config;

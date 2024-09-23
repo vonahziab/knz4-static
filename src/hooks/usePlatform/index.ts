@@ -5,9 +5,9 @@ export type Platform = 'tg' | 'vk' | 'web';
 const usePlatform = (): {
 	platform: Platform;
 } => {
-	const tgWebApp = getWebApp();
+	const WebApp = getWebApp();
 
-	const isTg = !!tgWebApp.initData;
+	const isTg = !!WebApp.initData;
 	const isVk = false;
 
 	return {
