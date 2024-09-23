@@ -68,7 +68,7 @@ const App: FC = () => {
 					right: 0,
 					zIndex: 999,
 					fontSize: 8,
-					color: 'rgba(255, 255, 255, 0.1)',
+					color: 'rgba(255, 255, 255, 0.2)',
 					paddingBottom: 'var(--safe-area-inset-bottom)',
 				}}
 			>

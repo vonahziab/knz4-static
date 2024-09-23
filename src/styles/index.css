@@ -1,5 +1,5 @@
 :root {
-	--safe-area-inset-bottom: calc(100vh - var(--tg-viewport-stable-height, 100vh));
+	--safe-area-inset-bottom: env(--safe-area-inset-bottom, calc(100vh - var(--tg-viewport-stable-height, 100vh)));
 }
 
 * {
