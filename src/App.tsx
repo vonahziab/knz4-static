@@ -36,6 +36,12 @@ const App: FC = () => {
 		router.data.modal_id,
 	]);
 
+	useEffect(() => {
+		router.data.modal_id
+			? WebApp.isVersionAtLeast('7.7') && WebApp.disableVerticalSwipes()
+			: WebApp.isVersionAtLeast('7.7') && WebApp.enableVerticalSwipes();
+	}, [router.data.modal_id]);
+
 	return <Router router={router} />;
 };
 

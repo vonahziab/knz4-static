@@ -8,10 +8,7 @@ import './index.css';
 const TestModal = ({ router, id }: ModalProps) => {
 	const { bottom } = useSafeInsets();
 
-	useEffect(() => {
-		getWebApp().disableVerticalSwipes();
-		return () => getWebApp().enableVerticalSwipes();
-	}, []);
+	
 
 	return (
 		<Modal id={id} router={router} header={'Test'}>
