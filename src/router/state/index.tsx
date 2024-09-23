@@ -3,7 +3,7 @@ import routes, { AppModal, AppPanel, AppView } from 'router/routes';
 
 export const app_tabbar_show = atom<boolean>({
 	key: 'app_tabbar_show',
-	default: true,
+	default: false,
 });
 
 export const app_view = atom<AppView>({

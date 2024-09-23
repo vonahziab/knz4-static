@@ -1,4 +1,5 @@
 import TestModal from 'modals/TestModal';
+import Loader from 'panels/Loader';
 import Main from 'panels/Main';
 import Test from 'panels/Test';
 import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
@@ -6,7 +7,7 @@ import { IRoutes } from './types';
 
 export type AppView = 'main' | '2' | '3' | '4';
 export type AppModal = 'test';
-export type AppPanel = 'test' | 'main';
+export type AppPanel = 'test' | 'main' | 'loader';
 
 const routes: IRoutes = {
 	modals: [
@@ -18,12 +19,13 @@ const routes: IRoutes = {
 	views: [
 		{
 			id: 'main',
-			startPanel: 'main',
+			startPanel: 'loader',
 			tabbar: {
 				icon: FaHouse,
 				iconSize: 36,
 			},
 			panels: [
+				{ id: 'loader', panel: Loader },
 				{ id: 'main', panel: Main },
 				{ id: 'test', panel: Test },
 			],

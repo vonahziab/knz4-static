@@ -1,14 +1,10 @@
-import getWebApp from 'functions/TG/getWebApp';
 import useSafeInsets from 'hooks/useSafeInsets';
-import { useEffect } from 'react';
 import Modal from 'router/components/Modal';
 import { ModalProps } from 'router/types';
 import './index.css';
 
 const TestModal = ({ router, id }: ModalProps) => {
 	const { bottom } = useSafeInsets();
-
-	
 
 	return (
 		<Modal id={id} router={router} header={'Test'}>

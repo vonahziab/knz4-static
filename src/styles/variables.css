@@ -31,4 +31,5 @@
 :root {
 	--default_transition: all .2s ease;
 	--transition_show_panel: all .5s ease;
+	--loader_transition: all .5s ease;
 }

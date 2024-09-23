@@ -7,9 +7,10 @@ import './index.css';
 interface Props extends HTMLAttributes<HTMLElement> {
 	id: AppPanel;
 	router: IRouter;
+	showAnimation?: boolean;
 }
 
-const Panel = ({ id, children, style, router }: Props) => {
+const Panel = ({ id, children, style, router, showAnimation = true }: Props) => {
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -27,7 +28,7 @@ const Panel = ({ id, children, style, router }: Props) => {
 				className="Panel"
 				style={{
 					transition: 'var(--transition_show_panel)',
-					opacity: show ? 1 : 0,
+					opacity: show || !showAnimation ? 1 : 0,
 					paddingBottom: `calc(${bottom} + 16px + ${isTabbarOpened ? '56px' : '0px'})`,
 					...style,
 				}}
