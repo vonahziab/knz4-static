@@ -1,29 +1,30 @@
 import TestModal from 'modals/TestModal';
-import Loader from 'panels/Before/Loader';
 import GameplayMain from 'panels/Gameplay/Main';
 import HomeMain from 'panels/Home/Main';
 import IncomeMain from 'panels/Income/Main';
-import Test from 'panels/Other/Test';
+import Loader from 'panels/PrePage/Loader';
+import Test from 'panels/Single/Test';
 import TopMain from 'panels/Top/Main';
 import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
 import { IRoutes } from './types';
 
 export type AppView = 'home' | 'income' | 'gameplay' | 'top';
 export type AppPanel =
-	| AppPanelBefore
+	| AppPanelPrePage
 	| AppPanelHome
 	| AppPanelIncome
-	| AppPanelGameplay
 	| AppPanelTop
-	| 'test';
+	| AppPanelGameplay
+	| AppPanelSingle;
 
 export type AppModal = 'test';
 
-export type AppPanelBefore = 'loader';
-export type AppPanelHome = 'home_main';
-export type AppPanelIncome = 'income_main';
-export type AppPanelGameplay = 'gameplay_main';
-export type AppPanelTop = 'top_main';
+type AppPanelPrePage = 'loader';
+type AppPanelSingle = 'test';
+type AppPanelHome = 'home_main';
+type AppPanelIncome = 'income_main';
+type AppPanelGameplay = 'gameplay_main';
+type AppPanelTop = 'top_main';
 
 const routes: IRoutes = {
 	startView: 'home',

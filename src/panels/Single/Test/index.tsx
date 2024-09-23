@@ -3,23 +3,10 @@ import { PanelProps } from 'router/types';
 
 const Test = ({ id, router }: PanelProps) => {
 	return (
-		<Panel id={id} router={router}>
-			<button
-				style={{
-					marginBottom: 16,
-				}}
-				onClick={() => router.goBack()}
-			>
-				Назад
-			</button>
-			<button
-				style={{
-					marginBottom: 16,
-				}}
-				onClick={() => router.setModal('test')}
-			>
-				Модалка
-			</button>
+		<Panel id={id} router={router} style={{ gap: 16 }}>
+			<h1>Test</h1>
+			<button onClick={() => router.goBack()}>Back</button>
+
 			{new Array(10).fill(true).map((i, index) => {
 				return (
 					<div
@@ -32,7 +19,6 @@ const Test = ({ id, router }: PanelProps) => {
 							width: '100%',
 							backgroundColor: 'var(--bg_color_2)',
 							border: '1px solid var(--bg_color_3)',
-							marginBottom: index !== 9 ? 16 : undefined,
 							borderRadius: 32,
 							textAlign: 'center',
 							boxSizing: 'border-box',
