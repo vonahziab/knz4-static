@@ -1,0 +1,32 @@
+#PanelLoader_LogoWrappper {
+	transition: var(--loader_transition);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+}
+
+#PanelLoader_Logo_Version {
+	font-family: sans-serif;
+	line-height: 20px;
+	font-weight: bold;
+	font-size: 20px;
+	color: var(--primary_color);
+	opacity: 0.5;
+	letter-spacing: 1px;
+	transform: translateX(0);
+	transition: var(--loader_transition);
+}
+
+#PanelLoader_LoadingText {
+	position: fixed;
+	box-sizing: border-box;
+	width: calc(100vw - 32px);
+	padding: 18px;
+	line-height: 18px;
+	font-size: 18px;
+	color: var(--hint_color);
+	transition: var(--loader_transition);
+	text-align: center;
+}

@@ -1,4 +1,3 @@
-import BlockText from 'components/BlockText';
 import { FC, HTMLAttributes, useEffect, useState } from 'react';
 import { SetterOrUpdater } from 'recoil';
 
@@ -56,14 +55,16 @@ const Tabs: FC<ITabs> = ({ tab, setTab, tabs, handleClick }) => {
 								whiteSpace: 'nowrap',
 							}}
 						>
-							<BlockText
-								lineHeight="21px"
-								fontSize={16}
-								fontWeight={700}
-								color={tab !== item.value ? 'var(--hint_color)' : undefined}
+							<div
+								style={{
+									lineHeight: '21px',
+									fontSize: 16,
+									fontWeight: 700,
+									color: tab !== item.value ? 'var(--hint_color)' : undefined,
+								}}
 							>
 								{item.label}
-							</BlockText>
+							</div>
 
 							<div
 								style={{

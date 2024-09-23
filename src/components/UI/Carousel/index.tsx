@@ -1,4 +1,4 @@
-import Bullets from 'components/Bullets';
+import Bullets from 'components/UI/Bullets';
 import React, { Children, HTMLAttributes, cloneElement, useEffect, useId, useState } from 'react';
 import { FaCircleArrowLeft, FaCircleArrowRight } from 'react-icons/fa6';
 import './index.css';

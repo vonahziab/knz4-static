@@ -1,4 +1,4 @@
-import Card from 'components/Card';
+import Card from 'components/UI/Card';
 import { HTMLAttributes, ReactElement } from 'react';
 import './index.css';
 interface Props extends HTMLAttributes<HTMLElement> {
