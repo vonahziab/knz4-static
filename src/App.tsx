@@ -2,8 +2,18 @@ import { FC } from 'react';
 
 const App: FC = () => {
 	return (
-		<>
-			Hello, World! Koinz v0.7 :)
+		<div
+			style={{
+				height: '100%',
+				overflow: 'scroll',
+				position: 'absolute',
+				bottom: '0',
+				right: '0',
+				top: '0',
+				left: '0',
+			}}
+		>
+			Hello, World! Koinz v0.8 :)
 			<div
 				style={{
 					height: 24,
@@ -25,14 +35,7 @@ const App: FC = () => {
 					backgroundColor: 'orange',
 				}}
 			/>
-			<div
-				style={{
-					height: 'var(--tg-viewport-stable-height)',
-					width: '100%',
-					backgroundColor: 'blue',
-				}}
-			/>
-		</>
+		</div>
 	);
 };
 

@@ -1,15 +1,41 @@
 :root {
-	--safe-area-inset-bottom: calc(100vh - var(--tg-viewport-stable-height, 100vh))
+	--safe-area-inset-bottom: calc(100vh - var(--tg-viewport-stable-height, 100vh));
+}
+
+* {
+	margin: 0;
+	padding: 0;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+
+*::-webkit-scrollbar {
+	width: 0;
+}
+
+html {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 html, body {
 	display: block;
 	height: 100%;
 	min-height: 100%;
-	/* overflow: hidden;
+	overflow: hidden;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 	top: 0;
-	left: 0; */
+	left: 0;
 }
