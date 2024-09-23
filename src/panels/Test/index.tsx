@@ -4,7 +4,14 @@ import { PanelProps } from 'router/types';
 const Test = ({ id, router }: PanelProps) => {
 	return (
 		<Panel id={id} router={router}>
-			<button onClick={() => router.goBack()}>Назад</button>
+			<button
+				style={{
+					marginBottom: 16,
+				}}
+				onClick={() => router.goBack()}
+			>
+				Назад
+			</button>
 			{new Array(10).fill(true).map((i, index) => {
 				return (
 					<div
@@ -13,7 +20,7 @@ const Test = ({ id, router }: PanelProps) => {
 							display: 'flex',
 							justifyContent: 'center',
 							alignItems: 'center',
-							height: 100,
+							padding: 16,
 							width: '100%',
 							backgroundColor: 'var(--bg_color_2)',
 							border: '1px solid var(--bg_color_3)',

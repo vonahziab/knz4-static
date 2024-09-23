@@ -4,8 +4,14 @@ import { PanelProps } from 'router/types';
 const Test = ({ id, router }: PanelProps) => {
 	return (
 		<Panel id={id} router={router}>
-			Test
-			<button onClick={() => router.goForward('test')}>Test</button>
+			<button
+				style={{
+					marginBottom: 16,
+				}}
+				onClick={() => router.goForward('test')}
+			>
+				Test
+			</button>
 		</Panel>
 	);
 };
