@@ -23,6 +23,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				PanelLoader_LoadingText.style.transform = 'translateY(54px)';
 				PanelLoader_LoadingText.style.opacity = '0';
 				setTimeout(() => {
+					router.setTabbarShow(true);
 					router.setPanel('home_main');
 				}, 500);
 			}, 50 + 500 + 200);
