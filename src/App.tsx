@@ -10,10 +10,12 @@ const App: FC = () => {
 
 	useEffect(() => {
 		WebApp.ready();
-		WebApp.setHeaderColor(config.colors.header);
+		WebApp.isVersionAtLeast('6.1') && WebApp.setHeaderColor(config.colors.header);
 	}, []);
 
 	useEffect(() => {
+		if (!WebApp.isVersionAtLeast('6.1')) return;
+
 		const viewId = getViewIdFromName(router.data.activeView);
 
 		router.data.history[viewId].length > 1 || router.data.modal_id

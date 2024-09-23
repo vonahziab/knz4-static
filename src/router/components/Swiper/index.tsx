@@ -54,7 +54,6 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 
 			if (x > window.innerWidth * 0.1) return;
 			if (dX > CIRCLE_SWIPE_LENGTH && _X - x > dX) return;
-			// console.log(_X);
 
 			if (
 				dX === CIRCLE_SWIPE_LENGTH &&
@@ -64,7 +63,6 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 			) {
 				onSwipeBack();
 				haptic.impact.light();
-				console.log(1);
 				setShowIconBack(true);
 				setEnabledSwipeBack(false);
 			} else if (_X - x < CIRCLE_SWIPE_LENGTH) {
