@@ -1,8 +1,8 @@
+import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { Panel } from 'router';
 import { PanelProps } from 'router/types';
-import './../../../i18n/config';
 
 const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
@@ -23,27 +23,6 @@ const Main = ({ id, router }: PanelProps) => {
 				<button style={{ width: '100%' }} onClick={() => i18next.changeLanguage('ru')}>
 					RU
 				</button>
-			</div>
-
-			<div>
-				<div
-					style={{
-						height: 100,
-						backgroundColor: 'var(--bg_color)',
-					}}
-				/>
-				<div
-					style={{
-						height: 100,
-						backgroundColor: 'var(--bg_color_2)',
-					}}
-				/>
-				<div
-					style={{
-						height: 100,
-						backgroundColor: 'var(--bg_color_3)',
-					}}
-				/>
 			</div>
 		</Panel>
 	);
