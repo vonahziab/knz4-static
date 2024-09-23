@@ -1,3 +1,4 @@
+import config from 'config';
 import { FC } from 'react';
 
 const App: FC = () => {
@@ -14,7 +15,7 @@ const App: FC = () => {
 					left: '0',
 
 					color: 'white',
-					backgroundColor: 'rgba(0, 0, 0)',
+					backgroundColor: '#0E0D0B',
 					padding: '16px 16px 0px',
 					paddingBottom: 'calc(var(--safe-area-inset-bottom) + 16px)',
 					boxSizing: 'border-box',
@@ -28,16 +29,14 @@ const App: FC = () => {
 						paddingBottom: 64,
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.16</div>
-
-					<div
+					{/* <div
 						style={{
 							height: 'var(--safe-area-inset-bottom)',
 							width: '100%',
 							backgroundColor: 'orange',
 							marginBottom: 16,
 						}}
-					/>
+					/> */}
 
 					{new Array(15).fill(1).map((i, index) => {
 						return (
@@ -61,6 +60,21 @@ const App: FC = () => {
 					})}
 				</div>
 			</div>
+
+			<div
+				style={{
+					position: 'fixed',
+					bottom: 0,
+					zIndex: 999,
+					fontSize: 10,
+					width: '100%',
+					textAlign: 'end',
+					color: 'rgba(255, 255, 255, 0.1)',
+					paddingBottom: 'var(--safe-area-inset-bottom)',
+				}}
+			>
+				<div style={{ padding: 4 }}>версия {config.version}</div>
+			</div>
 			<div
 				style={{
 					height: 64,
@@ -69,18 +83,19 @@ const App: FC = () => {
 					left: 0,
 					bottom: 0,
 					paddingBottom: 'var(--safe-area-inset-bottom)',
-					backgroundColor: 'white',
+					backgroundColor: '#0E0D0B',
 				}}
 			>
 				<div
 					style={{
+						borderTop: 'solid 1px #181715',
 						height: 64,
 						width: '100%',
 						display: 'flex',
 						justifyContent: 'center',
 						alignItems: 'center',
-						backgroundColor: 'white',
-						color: 'black',
+						backgroundColor: '#0E0D0B',
+						color: 'white',
 						fontSize: 24,
 					}}
 				>
