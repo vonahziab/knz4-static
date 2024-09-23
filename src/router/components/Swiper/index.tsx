@@ -10,12 +10,7 @@ interface Props {
 	disabled?: boolean;
 }
 
-const Swiper = ({
-	router,
-	disabled,
-	onSwipeBack = () => getWebApp()?.HapticFeedback.impactOccurred('light'),
-	onSwipeBackEnd,
-}: Props) => {
+const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Props) => {
 	const [showIconBack, setShowIconBack] = useState(false);
 
 	const CIRCLE_HEIGHT = 120;
@@ -66,6 +61,7 @@ const Swiper = ({
 				onSwipeBack
 			) {
 				onSwipeBack();
+				getWebApp()?.HapticFeedback.impactOccurred('light');
 				setShowIconBack(true);
 				setEnabledSwipeBack(false);
 			} else if (_X - x < CIRCLE_SWIPE_LENGTH) {
