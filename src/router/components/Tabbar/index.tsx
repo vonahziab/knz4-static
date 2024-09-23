@@ -62,7 +62,7 @@ const Tabbar = ({ router }: { router: IRouter }) => {
 			</div>
 		</>
 	) : (
-		<div />
+		<></>
 	);
 };
 

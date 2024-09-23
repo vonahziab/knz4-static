@@ -18,7 +18,7 @@ const Swiper = ({
 }: Props) => {
 	const [showIconBack, setShowIconBack] = useState(false);
 
-	const CIRCLE_HEIGHT = window.innerHeight * 0.8;
+	const CIRCLE_HEIGHT = 120;
 	const CIRCLE_WIDTH = 120;
 	const CIRCLE_SWIPE_LENGTH = CIRCLE_WIDTH / 3;
 
@@ -121,13 +121,15 @@ const Swiper = ({
 		>
 			<div
 				style={{
-					width: CIRCLE_WIDTH / 3,
+					width: CIRCLE_WIDTH / 3 + 6,
 					height: CIRCLE_WIDTH / 3,
 					color: 'black',
 					overflow: 'hidden',
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
+					// backgroundColor: 'red',
+					// opacity: 0.3,
 				}}
 			>
 				{showIconBack && (
@@ -135,7 +137,7 @@ const Swiper = ({
 						size={(CIRCLE_WIDTH / 3) * 0.9}
 						color={'var(--primary_color)'}
 						style={{
-							opacity: .8
+							opacity: 0.8,
 						}}
 					/>
 				)}
