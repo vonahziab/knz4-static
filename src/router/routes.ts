@@ -39,7 +39,7 @@ const routes: IRoutes = {
 			startPanel: 'loader',
 			tabbar: {
 				icon: FaHouse,
-				iconSize: 36,
+				iconSize: 24 + 8,
 			},
 			panels: [
 				{ id: 'home_main', panel: HomeMain },
@@ -52,7 +52,7 @@ const routes: IRoutes = {
 			startPanel: 'income_main',
 			tabbar: {
 				icon: FaKey,
-				iconSize: 32,
+				iconSize: 24 + 4,
 			},
 			panels: [{ id: 'income_main', panel: IncomeMain }],
 		},
@@ -61,7 +61,7 @@ const routes: IRoutes = {
 			startPanel: 'gameplay_main',
 			tabbar: {
 				icon: FaGamepad,
-				iconSize: 40,
+				iconSize: 24 + 12,
 			},
 			panels: [{ id: 'gameplay_main', panel: GameplayMain }],
 		},
@@ -70,7 +70,7 @@ const routes: IRoutes = {
 			startPanel: 'top_main',
 			tabbar: {
 				icon: FaStar,
-				iconSize: 36,
+				iconSize: 24 + 8,
 			},
 			panels: [{ id: 'top_main', panel: TopMain }],
 		},
