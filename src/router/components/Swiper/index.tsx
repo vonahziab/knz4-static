@@ -1,4 +1,4 @@
-import getWebApp from 'functions/getWebApp';
+import useHaptic from 'hooks/useHaptic';
 import { useEffect, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { IRouter } from 'router/types';
@@ -11,6 +11,8 @@ interface Props {
 }
 
 const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Props) => {
+	const haptic = useHaptic();
+
 	const [showIconBack, setShowIconBack] = useState(false);
 
 	const CIRCLE_HEIGHT = 120;
@@ -61,7 +63,7 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 				onSwipeBack
 			) {
 				onSwipeBack();
-				getWebApp()?.HapticFeedback.impactOccurred('light');
+				haptic.impact.light();
 				setShowIconBack(true);
 				setEnabledSwipeBack(false);
 			} else if (_X - x < CIRCLE_SWIPE_LENGTH) {
