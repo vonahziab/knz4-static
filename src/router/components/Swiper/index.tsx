@@ -1,5 +1,6 @@
 import getWebApp from 'functions/getWebApp';
 import { useEffect, useState } from 'react';
+import { IoIosArrowBack } from 'react-icons/io';
 import { IRouter } from 'router/types';
 import './index.css';
 interface Props {
@@ -15,6 +16,8 @@ const Swiper = ({
 	onSwipeBack = () => getWebApp()?.HapticFeedback.impactOccurred('light'),
 	onSwipeBackEnd,
 }: Props) => {
+	const [showIconBack, setShowIconBack] = useState(false);
+
 	const CIRCLE_HEIGHT = window.innerHeight * 0.8;
 	const CIRCLE_WIDTH = 120;
 	const CIRCLE_SWIPE_LENGTH = CIRCLE_WIDTH / 3;
@@ -63,8 +66,10 @@ const Swiper = ({
 				onSwipeBack
 			) {
 				onSwipeBack();
+				setShowIconBack(true);
 				setEnabledSwipeBack(false);
 			} else if (_X - x < CIRCLE_SWIPE_LENGTH) {
+				setShowIconBack(false);
 				setEnabledSwipeBack(true);
 			}
 
@@ -85,6 +90,7 @@ const Swiper = ({
 			setDX(0);
 			setX(0);
 			setEnabledSwipeBack(true);
+			setShowIconBack(false);
 			C.style.transition = 'var(--default_transition)';
 			C.style.transform = `scale(0)`;
 		};
@@ -108,8 +114,33 @@ const Swiper = ({
 				left: CIRCLE_WIDTH * -1,
 				height: CIRCLE_HEIGHT,
 				width: CIRCLE_WIDTH,
+				display: 'flex',
+				justifyContent: 'end',
+				alignItems: 'center',
 			}}
-		/>
+		>
+			<div
+				style={{
+					width: CIRCLE_WIDTH / 3,
+					height: CIRCLE_WIDTH / 3,
+					color: 'black',
+					overflow: 'hidden',
+					display: 'flex',
+					justifyContent: 'center',
+					alignItems: 'center',
+				}}
+			>
+				{showIconBack && (
+					<IoIosArrowBack
+						size={(CIRCLE_WIDTH / 3) * 0.9}
+						color={'var(--primary_color)'}
+						style={{
+							opacity: .8
+						}}
+					/>
+				)}
+			</div>
+		</div>
 	);
 };
 

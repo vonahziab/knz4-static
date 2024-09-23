@@ -1,3 +1,4 @@
+import usePlatform from 'hooks/usePlatform';
 import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes } from 'react';
 import { AppPanel, IRouter } from 'router/types';
@@ -9,7 +10,9 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const Panel = ({ id, children, style, router }: Props) => {
+	const { platform } = usePlatform();
 	const { bottom } = useSafeInsets();
+
 	const isTabbarOpened = router.data.tabbarShow;
 
 	return (
@@ -17,6 +20,7 @@ const Panel = ({ id, children, style, router }: Props) => {
 			<div
 				className="Panel"
 				style={{
+					borderTop: platform === 'tg' ? 'solid 1px var(--bg_color_2)' : undefined,
 					paddingBottom: `calc(${bottom} + 16px + ${isTabbarOpened ? '56px' : '0px'})`,
 				}}
 			>

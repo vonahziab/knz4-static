@@ -1,8 +1,7 @@
 #ARMUI_Swiper_circle {
 	position: fixed;
 	border-radius: 50%;
-	opacity: .2;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.1);
 	pointer-events: none;
 	touch-action: manipulation;
 	z-index: 998;
