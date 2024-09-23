@@ -3,7 +3,7 @@ import { FC } from 'react';
 const App: FC = () => {
 	return (
 		<>
-			Hello, World! Koinz v0.5 :)
+			Hello, World! Koinz v0.6 :)
 			<div
 				style={{
 					height: 24,
