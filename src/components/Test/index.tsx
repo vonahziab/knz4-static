@@ -1,23 +1,23 @@
+import useSafeInsets from 'hooks/useSafeInsets';
+
 type Props = {};
 
 const TestPanel = (props: Props) => {
-	// const { bottom } = useSafeInsets();
+	const { bottom } = useSafeInsets();
 
 	return (
 		<div
 			style={{
 				height: '100%',
-				overflow: 'scroll',
+				width: '100%',
 				position: 'absolute',
 				bottom: '0',
 				right: '0',
 				top: '0',
 				left: '0',
+				overflow: 'scroll',
 				backgroundColor: 'var(--bg_color)',
 				color: 'var(--text_color)',
-				boxSizing: 'border-box',
-				// padding: '16px 16px 0px',
-				// paddingBottom: `calc(${bottom} + 16px)`,
 			}}
 		>
 			<div
@@ -25,7 +25,7 @@ const TestPanel = (props: Props) => {
 					display: 'flex',
 					flexDirection: 'column',
 					padding: 16,
-					paddingBottom: 16 + 64,
+					paddingBottom: `calc(${bottom} + 16px + 64px)`,
 				}}
 			>
 				{new Array(10).fill(true).map((i, index) => {
