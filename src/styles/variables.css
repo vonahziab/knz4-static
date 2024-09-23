@@ -1,0 +1,18 @@
+/* Отступ нижний */
+:root {
+	--tg-safe-area-inset-bottom: calc(100vh - var(--tg-viewport-stable-height, 100vh));
+}
+
+/* Цвета */
+:root {
+	--bg_color: #0E0D0B;
+	--bg_color_2: #181715;
+	--bg_color_3: #22211F;
+	--primary_color: #FFBE00;
+	--hint_color: #9E9E9E;
+	--text_color: #FFFEFF;
+	--link_color: #03A9F4;
+	--gold_color: #FFCF40;
+	--silver_color: #C0C0C0;
+	--bronze_color: #CD7F32;
+}

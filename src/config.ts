@@ -2,8 +2,11 @@ const config = {
 	server: {
 		domain: 'https://api.koinz.ru',
 	},
+	colors: {
+		header: '#0E0D0B',
+	},
 	links: {},
-	version: '0.24',
+	version: '0.27',
 };
 
 export default config;
