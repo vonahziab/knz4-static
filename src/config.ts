@@ -3,7 +3,7 @@ const config = {
 		domain: 'https://api.quickulator.ru',
 	},
 	links: {},
-	version: '0.18',
+	version: '0.19',
 };
 
 export default config;
