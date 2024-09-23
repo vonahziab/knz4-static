@@ -1,6 +1,7 @@
 import getWebApp from 'functions/getWebApp';
 import React, { Children, HTMLAttributes, useEffect } from 'react';
-import { AppPanel, IRouter } from 'router/types';
+import { AppPanel } from 'router/routes';
+import { IRouter } from 'router/types';
 import Swiper from '../Swiper';
 
 interface Props extends HTMLAttributes<HTMLElement> {

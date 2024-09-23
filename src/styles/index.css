@@ -42,7 +42,28 @@ img {
 	pointer-events: none;
 }
 
-@import url("./position.css");
+/* Позиционирование */
+html, body {
+	display: block;
+	height: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	left: 0;
+}
+
+/* Темы */
+a {
+	color: var(--link_color);
+}
+
+body {
+	background-color: var(--bg_color);
+	color: var(--text_color);
+}
+
 @import url("./variables.css");
-@import url("./theme.css");
 @import url("./shortcuts.css");

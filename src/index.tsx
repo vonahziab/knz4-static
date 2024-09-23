@@ -1,5 +1,6 @@
 import App from 'App';
 import { createRoot } from 'react-dom/client';
+import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { RecoilRoot } from 'recoil';
 import 'styles/index.css';
@@ -13,6 +14,11 @@ process.env.NODE_ENV !== 'development' &&
 
 root.render(
 	<RecoilRoot>
-		<App />
+		<SkeletonTheme
+			baseColor="var(--skeleton_base_color)"
+			highlightColor="var(--skeleton_highlight_color)"
+		>
+			<App />
+		</SkeletonTheme>
 	</RecoilRoot>
 );

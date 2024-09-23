@@ -1,8 +1,8 @@
 import getWebApp from 'functions/getWebApp';
 import useSafeInsets from 'hooks/useSafeInsets';
 import VersionBlock from 'router/components/VersionBlock';
-import routes from 'router/routes';
-import { AppView, IRouter } from 'router/types';
+import routes, { AppView } from 'router/routes';
+import { IRouter } from 'router/types';
 import './index.css';
 
 const Tabbar = ({ router }: { router: IRouter }) => {

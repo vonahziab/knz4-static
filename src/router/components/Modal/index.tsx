@@ -1,7 +1,8 @@
 import getWebApp from 'functions/getWebApp';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { IoCloseCircle } from 'react-icons/io5';
-import { AppModal, IRouter } from 'router/types';
+import { AppModal } from 'router/routes';
+import { IRouter } from 'router/types';
 import './index.css';
 
 interface Props extends HTMLAttributes<HTMLElement> {

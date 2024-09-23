@@ -1,8 +1,11 @@
+import Main from 'panels/Main';
 import Test from 'panels/Test';
+import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
 import { IRoutes } from './types';
 
-import Main from 'panels/Main';
-import { FaGamepad, FaHouse, FaKey, FaStar } from 'react-icons/fa6';
+export type AppView = 'main' | '2' | '3' | '4';
+export type AppModal = 'test';
+export type AppPanel = 'test' | 'main';
 
 const routes: IRoutes = {
 	modals: [],

@@ -1,7 +1,8 @@
 import usePlatform from 'hooks/usePlatform';
 import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes } from 'react';
-import { AppPanel, IRouter } from 'router/types';
+import { AppPanel } from 'router/routes';
+import { IRouter } from 'router/types';
 import './index.css';
 
 interface Props extends HTMLAttributes<HTMLElement> {

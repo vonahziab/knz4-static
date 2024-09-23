@@ -1,5 +1,4 @@
-import { AppPanel, AppView } from 'router/types';
-import routes from '../routes';
+import routes, { AppPanel, AppView } from '../routes';
 
 export const historyClear = (history: AppPanel[][], startPanel: AppPanel, viewId: number) => {
 	let _history: AppPanel[][] = Object.assign([], history);

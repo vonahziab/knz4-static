@@ -1,5 +1,6 @@
 import React, { Children, HTMLAttributes } from 'react';
-import { AppModal, IRouter } from 'router/types';
+import { AppModal } from 'router/routes';
+import { IRouter } from 'router/types';
 import ModalWrapper from '../ModalWrapper';
 
 interface Props extends HTMLAttributes<HTMLElement> {

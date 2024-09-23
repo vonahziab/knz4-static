@@ -12,22 +12,7 @@ const Router = ({ router }: { router: IRouter }) => {
 	const WebApp = getWebApp();
 
 	useEffect(() => {
-		router.setTheme(WebApp?.colorScheme || 'light');
-
-		const themeChanged = () => {
-			if (WebApp?.isVersionAtLeast('6.9')) {
-				WebApp?.setHeaderColor(config.colors.header);
-			} else {
-				console.log(`method .setHeaderColor() required verison of Bot API 6.9`);
-			}
-
-			router.setTheme(WebApp?.colorScheme || 'light');
-		};
-
-		themeChanged();
-
-		WebApp?.onEvent('themeChanged', themeChanged);
-		return () => WebApp?.offEvent('themeChanged', themeChanged);
+		WebApp?.setHeaderColor(config.colors.header);
 	}, []);
 
 	return (
