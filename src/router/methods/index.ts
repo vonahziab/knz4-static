@@ -153,7 +153,18 @@ export const useCloseModal: () => _UseCloseModal = () => {
 
 export const useSetTabbarShow: () => _UseSetTabbarShow = () => {
 	const setTabarShow = useSetRecoilState(app_tabbar_show);
-	const _: _UseSetTabbarShow = value => setTabarShow(value);
+
+	const _: _UseSetTabbarShow = value => {
+		const TabbarWrapper = document.getElementById('TabbarWrapper');
+
+		if (TabbarWrapper) {
+			if (!value) {
+				TabbarWrapper.style.transform = 'translateY(100%)';
+			}
+		}
+
+		value ? setTabarShow(true) : setTimeout(() => setTabarShow(false), 200);
+	};
 
 	return _;
 };
