@@ -24,26 +24,18 @@ const App: FC = () => {
 					style={{
 						display: 'flex',
 						flexDirection: 'column',
-						gap: 16,
 						boxSizing: 'border-box',
 						paddingBottom: 100,
 					}}
 				>
-					<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.13</div>
-
-					<div
-						style={{
-							height: 24,
-							width: '100%',
-							backgroundColor: 'green',
-						}}
-					/>
+					<div style={{ fontSize: 20, textAlign: 'center' }}>v0.14</div>
 
 					<div
 						style={{
 							height: 'var(--safe-area-inset-bottom)',
 							width: '100%',
 							backgroundColor: 'orange',
+							marginBottom: 16,
 						}}
 					/>
 
@@ -52,9 +44,15 @@ const App: FC = () => {
 							<div
 								key={index}
 								style={{
-									height: 100,
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+
+									height: 50,
 									width: '100%',
 									backgroundColor: 'blue',
+									marginBottom: index !== 14 ? 16 : undefined,
+									borderRadius: 16,
 								}}
 							>
 								{index + 1}
@@ -71,6 +69,7 @@ const App: FC = () => {
 					left: 0,
 					bottom: 0,
 					paddingBottom: 'var(--safe-area-inset-bottom)',
+					backgroundColor: 'white',
 				}}
 			>
 				<div
