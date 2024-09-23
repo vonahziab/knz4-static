@@ -1,9 +1,12 @@
+import useSafeInsets from 'hooks/useSafeInsets';
 import { useEffect, useState } from 'react';
 import { Panel } from 'router';
 import { PanelProps } from 'router/types';
 import './index.css';
 
 const Loader = ({ id, router }: PanelProps) => {
+	const { bottom } = useSafeInsets();
+
 	const [showTextLoading, setShowTextLoading] = useState(false);
 
 	useEffect(() => {
@@ -24,7 +27,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				setTimeout(() => {
 					router.goForward('main');
 				}, 500);
-			}, 50 + 500 + 50);
+			}, 50 + 500 + 5000);
 		}
 	}, []);
 
@@ -77,7 +80,7 @@ const Loader = ({ id, router }: PanelProps) => {
 				id="Loader_Element3"
 				style={{
 					position: 'fixed',
-					bottom: 0,
+					bottom: bottom,
 					padding: 18,
 					lineHeight: '18px',
 					fontSize: 18,
