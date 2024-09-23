@@ -11,9 +11,11 @@ const App: FC = () => {
 				right: '0',
 				top: '0',
 				left: '0',
+				backgroundColor: 'black',
+				color: 'white',
 			}}
 		>
-			Hello, World! Koinz v0.8 :)
+			<div style={{ fontSize: 20, textAlign: 'center' }}>Hello, Koinz v0.9</div>
 			<div
 				style={{
 					height: 24,
