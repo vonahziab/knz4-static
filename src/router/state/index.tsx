@@ -17,6 +17,11 @@ export const app_view_history = atom<AppPanel[][]>({
 	default: routes.views.map(i => [i.startPanel]),
 });
 
+export const app_modal_history = atom<AppModal[]>({
+	key: 'app_modal_history',
+	default: routes.modals.map(i => i.id),
+});
+
 export const app_panel = atom<AppPanel[]>({
 	key: 'app_panel',
 	default: routes.views.map(i => i.startPanel),

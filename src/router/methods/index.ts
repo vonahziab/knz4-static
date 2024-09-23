@@ -96,22 +96,22 @@ export const useGoBack: () => _UseGoBack = () => {
 	const activeView = useRecoilValue(app_view);
 	const viewId = getViewIdFromName(activeView);
 
-	// const [modal, setModal] = useRecoilState(router_modal);
+	const modal = useRecoilValue(app_modal_id);
+	const closeModal = useCloseModal();
 	// const [popout, setPopout] = useRecoilState(router_popout);
 
 	const _: _UseGoBack = (__viewId = -1) => {
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 
+		if (modal) {
+			return closeModal();
+		}
+
 		// if (popout) {
 		// 	return setPopout(undefined);
 		// }
 
-		// if (modal) {
-		// 	return setModal(undefined);
-		// }
-
-		if (history[_viewId].length === 1) {
-		} else {
+		if (history[_viewId].length !== 1) {
 			setHistory(historyPop(history, _viewId));
 			setPanel(panelSet(panel, _viewId, history[_viewId][history[_viewId].length - 2]));
 		}

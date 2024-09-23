@@ -21,14 +21,16 @@ const App: FC = () => {
 			? WebApp?.BackButton.show()
 			: WebApp?.BackButton.hide();
 
-		router.data.modal_id
-			? WebApp?.BackButton.onClick(router.closeModal)
-			: WebApp?.BackButton.onClick(router.goBack);
+		// router.data.modal_id
+		// 	? WebApp?.BackButton.onClick(router.closeModal)
+		// 	:
+		WebApp?.BackButton.onClick(router.goBack);
 
 		return () =>
-			router.data.modal_id
-				? WebApp?.BackButton.offClick(router.closeModal)
-				: WebApp?.BackButton.offClick(router.goBack);
+			// router.data.modal_id
+			// 	? WebApp?.BackButton.offClick(router.closeModal)
+			// 	:
+			WebApp?.BackButton.offClick(router.goBack);
 	}, [
 		router.data.activeView,
 		router.data.history[getViewIdFromName(router.data.activeView)],
