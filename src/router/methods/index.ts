@@ -163,14 +163,17 @@ export const useSetModal: () => _UseSetModal = () => {
 			Popout_Window.style.transform = `translateY(100%)`;
 		}
 
-		setTimeout(() => {
-			if (modal_id) {
-				setModalHistory(modalHistoryPush(modalHistory, modal_id));
-			} else {
-				setModalHistory([]);
-			}
-			setModal(modal_id);
-		}, 200);
+		setTimeout(
+			() => {
+				if (modal_id) {
+					setModalHistory(modalHistoryPush(modalHistory, modal_id));
+				} else {
+					setModalHistory([]);
+				}
+				setModal(modal_id);
+			},
+			modalHistory.length === 0 ? 0 : 250
+		);
 	};
 
 	return _;

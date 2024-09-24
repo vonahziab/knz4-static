@@ -1,3 +1,4 @@
+import clg from 'functions/clg';
 import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -13,7 +14,14 @@ const Main = ({ id, router }: PanelProps) => {
 			<button onClick={() => router.setTabbarShow(!router.data.tabbarShow)}>
 				Toggle Tabbar
 			</button>
-			<button onClick={() => router.setModal('test')}>Go to Test Modal</button>
+			<button
+				onClick={() => {
+					router.setModal('test');
+					clg(1);
+				}}
+			>
+				Go to Test Modal
+			</button>
 
 			<div style={{ textAlign: 'center' }}>{t('home_main.change_language')}</div>
 			<div style={{ display: 'flex', gap: 8 }}>
