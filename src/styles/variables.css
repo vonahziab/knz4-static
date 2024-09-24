@@ -46,8 +46,11 @@
 	/* Panel Wrapper. Смена темы */
 	--panel_wrapper_transition: all .2s ease;
 
-	/* Panel Content. Появление контента */
+	/* Panel Content. */
 	--panel_content_transition: all .2s ease;
+
+	/* Появление контента */
+	--panel_content_render_transition: all .5s ease;
 
 
 	/* Modal Wrapper. Затемнение фона модалки */
@@ -55,6 +58,9 @@
 
 	/* Modal Content. Смена темы. Появление контента. Плавное поднятие */
 	--modal_content_transition: all .2s ease;
+
+	/* Появление контента */
+	--modal_content_render_transition: all .5s ease;
 
 	/* Анимация кнопок шапки модалки */
 	--modal_header_buttons_transition: all .2s ease;

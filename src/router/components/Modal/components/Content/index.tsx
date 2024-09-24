@@ -1,27 +1,32 @@
 import usePlatform from 'hooks/usePlatform';
 import useSafeInsets from 'hooks/useSafeInsets';
-import { HTMLAttributes, useEffect, useState } from 'react';
+import { HTMLAttributes, useEffect } from 'react';
 
 interface Props extends HTMLAttributes<HTMLElement> {
 	id: string;
 	showAnimation?: boolean;
 }
 
-const Content = ({ showAnimation, style, children, id }: Props) => {
+const Content = ({ style, children, id, showAnimation }: Props) => {
 	const { bottom } = useSafeInsets();
 	const { platform } = usePlatform();
 
-	const [show, setShow] = useState(false);
-
 	useEffect(() => {
-		setTimeout(() => {
-			setShow(true);
-		}, 200);
+		const Content = document.getElementById(`${id}_ModalContent_Content`);
+		if (Content && showAnimation) {
+			Content.style.transition = 'var(--modal_content_render_transition)';
+			setTimeout(() => {
+				Content.style.opacity = '1';
+				setTimeout(() => {
+					Content.style.transition = 'var(--modal_content_transition)';
+				}, 500); // После появления вернуть скорость анимации
+			}, 200); // Пока поднимется
+		}
 	}, []);
 
 	return (
 		<div
-			id={`${id}_Content`}
+			id={`${id}_ModalContent_Content`}
 			style={{
 				maxHeight:
 					platform === 'web'
@@ -31,7 +36,7 @@ const Content = ({ showAnimation, style, children, id }: Props) => {
 				display: 'flex',
 				flexDirection: 'column',
 				transition: 'var(--modal_content_transition)',
-				opacity: show || !showAnimation ? 1 : 0,
+				opacity: showAnimation ? 0 : 1,
 				padding: 16,
 				paddingBottom: `calc(${bottom} + 16px)`,
 				...style,
