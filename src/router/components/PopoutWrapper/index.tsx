@@ -17,6 +17,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 
 	const _closeListener = (e?: Event) => {
 		e && e.preventDefault();
+		setEnableBackgroudClose(false);
 		router.setPopout();
 	};
 

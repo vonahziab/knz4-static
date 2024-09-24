@@ -20,6 +20,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 
 	const _closeListener = (e?: Event) => {
 		e && e.preventDefault();
+		setEnableBackgroudClose(false);
 		router.closeModal();
 	};
 
