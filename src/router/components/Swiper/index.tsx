@@ -88,7 +88,7 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 			setX(0);
 			setEnabledSwipeBack(true);
 			setShowIconBack(false);
-			C.style.transition = 'var(--default_transition)';
+			C.style.transition = 'var(--swiper_transition)';
 			C.style.transform = `scale(0)`;
 		};
 

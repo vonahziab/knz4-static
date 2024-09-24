@@ -25,6 +25,15 @@
 	--transition_show_content: all .5s ease;
 	--loader_transition: all .5s ease;
 	--tabbar_transition: all .2s ease;
+
+	--swiper_transition: all .2s ease;
+	--popout_transition: all .2s ease;
+	--panel_wrapper_transition: all .2s ease;
+
+	--modal_wrapper_transition: all .2s ease;
+	--modal_header_transition: all .2s ease;
+	--modal_transition: all .2s ease;
+
 }
 
 @import url("./schemes/light.css");

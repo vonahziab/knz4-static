@@ -39,7 +39,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 				id="PopoutWrapper_Content"
 				style={{
 					opacity: 0,
-					transition: 'var(--default_transition)',
+					transition: 'var(--popout_transition)',
 					transform: 'scale(0.8)',
 				}}
 			>

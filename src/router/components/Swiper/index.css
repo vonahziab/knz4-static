@@ -17,5 +17,5 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: var(--default_transition);
+	transition: var(--swiper_transition);
 }
