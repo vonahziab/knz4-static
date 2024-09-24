@@ -1,4 +1,3 @@
-import getWebApp from 'functions/TG/getWebApp';
 import useHaptic from 'hooks/useHaptic';
 import { useState } from 'react';
 import { BsExclamation } from 'react-icons/bs';
@@ -95,7 +94,7 @@ const NumberInput = ({
 									opacity: isCopied ? 0.7 : undefined,
 								}}
 								onClick={() => {
-									getWebApp()?.HapticFeedback.impactOccurred('light');
+									haptic.impact.rigid();
 									navigator.clipboard.writeText(`${value}`);
 									setIsCopied(true);
 									setTimeout(() => {
