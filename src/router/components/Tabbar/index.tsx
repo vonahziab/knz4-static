@@ -35,14 +35,11 @@ const Tabbar = ({ router }: { router: IRouter }) => {
 					className="TabbarWrapper"
 					style={{
 						paddingBottom: bottom,
-						transition: 'var(--tabbar_transition)',
-						transform: 'translateY(100%)',
 					}}
 				>
 					<div
 						className="VersionBlock"
 						style={{
-							transition: 'var(--tabbar_transition)',
 							paddingBottom: bottom,
 						}}
 					>

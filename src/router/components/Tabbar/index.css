@@ -6,6 +6,8 @@
 	bottom: 0px;
 	background-color: var(--bg_color);
 	border-top: solid 1px var(--border_color);
+	transition: var(--tabbar_toggle_transition);
+	transform: translateY(100%);
 	z-index: 999;
 }
 
@@ -22,7 +24,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	transition: var(--tabbar_transition);
 	cursor: pointer;
 	z-index: 1;
 	overflow: hidden;
@@ -30,7 +31,7 @@
 
 .TabbarItemIcon, .TabbarItemIcon-selected {
 	color: var(--inactive_color);
-	transition: var(--tabbar_transition);
+	transition: var(--tabbar_item_transition);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -43,7 +44,7 @@
 
 .TabbarItemText, .TabbarItemText-selected {
 	color: var(--inactive_color);
-	transition: var(--tabbar_transition);
+	transition: var(--tabbar_item_transition);
 	font-size: 12px;
 
 	display: flex;
