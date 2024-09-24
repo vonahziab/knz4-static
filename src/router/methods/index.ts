@@ -108,9 +108,9 @@ export const useGoBack: () => _UseGoBack = () => {
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 
 		if (modal) {
-			const Popout_Window = modal && document.getElementById(modal);
-			if (Popout_Window) {
-				Popout_Window.style.transform = `translateY(100%)`;
+			const Modal = modal && document.getElementById(`${modal}_Modal`);
+			if (Modal) {
+				Modal.style.transform = `translateY(100%)`;
 			}
 			if (modalHistory.length === 1) {
 				return closeModal();
@@ -152,12 +152,12 @@ export const useSetPopout: () => _UseSetPopout = () => {
 	const setPopout = useSetRecoilState(popout_element);
 	const _: _UseSetPopout = Popout => {
 		const PopoutWrapper = document.getElementById('PopoutWrapper');
-		const PopoutWrapper_Content = document.getElementById('PopoutWrapper_Content');
+		const PopoutContent = document.getElementById('PopoutContent');
 
-		if (PopoutWrapper && PopoutWrapper_Content && !Popout) {
+		if (PopoutWrapper && PopoutContent && !Popout) {
 			setTimeout(() => {
-				PopoutWrapper_Content.style.opacity = `0`;
-				PopoutWrapper_Content.style.transform = 'scale(0.8)';
+				PopoutContent.style.opacity = `0`;
+				PopoutContent.style.transform = 'scale(0.8)';
 				setTimeout(() => {
 					PopoutWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 				}, 200); // Дождаться исчезновения попаута
@@ -180,11 +180,11 @@ export const useSetModal: () => _UseSetModal = () => {
 	const old_modal_id = useRecoilValue(app_modal_id);
 
 	const _: _UseSetModal = modal_id => {
-		const OldModalContent = old_modal_id && document.getElementById(old_modal_id);
+		const Modal = old_modal_id && document.getElementById(`${old_modal_id}_Modal`);
 
-		if (OldModalContent && modal_id) {
+		if (Modal && modal_id) {
 			setTimeout(() => {
-				OldModalContent.style.transform = `translateY(100%)`;
+				Modal.style.transform = `translateY(100%)`;
 			}, 0);
 		}
 
@@ -213,11 +213,11 @@ export const useCloseModal: () => _UseCloseModal = () => {
 
 	const closeModal = () => {
 		const ModalWrapper = document.getElementById('ModalWrapper');
-		const ModalContent = modal && document.getElementById(modal);
+		const Modal = modal && document.getElementById(`${modal}_Modal`);
 
-		if (ModalWrapper && ModalContent) {
+		if (ModalWrapper && Modal) {
 			setTimeout(() => {
-				ModalContent.style.transform = `translateY(100%)`;
+				Modal.style.transform = `translateY(100%)`;
 
 				setTimeout(() => {
 					ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';

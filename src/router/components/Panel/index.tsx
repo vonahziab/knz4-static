@@ -28,10 +28,10 @@ const Panel = ({ id, children, style, router, showAnimation = true }: Props) => 
 	}, []);
 
 	return (
-		<div id={id} style={style} className="PanelWrapper">
+		<div id={`${id}_PanelWrapper`} style={style} className="PanelWrapper">
 			<div
 				id={`${id}_PanelContent`}
-				className="Panel"
+				className="PanelContent"
 				style={{
 					transition: 'var(--panel_content_transition)',
 					opacity: showAnimation ? 0 : 1,

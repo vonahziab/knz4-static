@@ -12,7 +12,7 @@ const Content = ({ style, children, id, showAnimation }: Props) => {
 	const { platform } = usePlatform();
 
 	useEffect(() => {
-		const Content = document.getElementById(`${id}_ModalContent_Content`);
+		const Content = document.getElementById(`${id}_Modal_Content`);
 		if (Content && showAnimation) {
 			Content.style.transition = 'var(--modal_content_render_transition)';
 			setTimeout(() => {
@@ -26,7 +26,7 @@ const Content = ({ style, children, id, showAnimation }: Props) => {
 
 	return (
 		<div
-			id={`${id}_ModalContent_Content`}
+			id={`${id}_Modal_Content`}
 			style={{
 				maxHeight:
 					platform === 'web'

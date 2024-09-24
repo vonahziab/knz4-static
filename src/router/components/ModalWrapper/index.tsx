@@ -33,14 +33,15 @@ const ModalWrapper = ({ children, router }: Props) => {
 
 	useEffect(() => {
 		const ModalWrapper = document.getElementById('ModalWrapper');
-		const ModalContent = router.data.modal_id && document.getElementById(router.data.modal_id);
+		const Modal =
+			router.data.modal_id && document.getElementById(`${router.data.modal_id}_Modal`);
 
-		if (ModalWrapper && ModalContent) {
+		if (ModalWrapper && Modal) {
 			setTimeout(() => {
 				ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, .7)';
 
 				setTimeout(() => {
-					ModalContent.style.transform = `translateY(0)`;
+					Modal.style.transform = `translateY(0)`;
 					setSwipeEnabled(true);
 				}, 400); // После полного затемнения выполнить
 			}, 0);
@@ -52,6 +53,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 	return (
 		<div
 			id="ModalWrapper"
+			className="ModalWrapper"
 			onClick={() => (enableBackgroudClose ? _closeListener() : undefined)}
 		>
 			{children}

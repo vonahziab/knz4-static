@@ -23,14 +23,14 @@ const PopoutWrapper = ({ children, router }: Props) => {
 
 	useEffect(() => {
 		const PopoutWrapper = document.getElementById('PopoutWrapper');
-		const PopoutWrapper_Content = document.getElementById('PopoutWrapper_Content');
-		if (PopoutWrapper && PopoutWrapper_Content) {
+		const PopoutContent = document.getElementById('PopoutContent');
+		if (PopoutWrapper && PopoutContent) {
 			setTimeout(() => {
 				PopoutWrapper.style.backgroundColor = 'rgba(0, 0, 0, .7)';
 
 				setTimeout(() => {
-					PopoutWrapper_Content.style.opacity = `1`;
-					PopoutWrapper_Content.style.transform = 'scale(1)';
+					PopoutContent.style.opacity = `1`;
+					PopoutContent.style.transform = 'scale(1)';
 				}, 400); // После полного затемнения выполнить
 			}, 0);
 		}
@@ -39,9 +39,12 @@ const PopoutWrapper = ({ children, router }: Props) => {
 	return (
 		<div
 			id="PopoutWrapper"
+			className="PopoutWrapper"
 			onClick={() => (enableBackgroudClose ? _closeListener() : () => {})}
 		>
-			<div id="PopoutWrapper_Content">{children}</div>
+			<div id="PopoutContent" className="PopoutContent">
+				{children}
+			</div>
 		</div>
 	);
 };

@@ -26,10 +26,10 @@ const Header = ({ id, router, header }: Props) => {
 	};
 
 	useEffect(() => {
-		const Popout_Window = router.data.modal_id && document.getElementById(id);
-		if (Popout_Window && router.data.modal_swipe_enabled) {
+		const Modal = router.data.modal_id && document.getElementById(`${id}_Modal`);
+		if (Modal && router.data.modal_swipe_enabled) {
 			setTimeout(() => {
-				Popout_Window.style.transform = `translateY(${dY}px)`;
+				Modal.style.transform = `translateY(${dY}px)`;
 			}, 0);
 		}
 	}, [dY]);
