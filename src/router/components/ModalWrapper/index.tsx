@@ -1,4 +1,4 @@
-import { HTMLAttributes, useEffect } from 'react';
+import { HTMLAttributes, useEffect, useState } from 'react';
 import { useSetRecoilState } from 'recoil';
 import { app_modal_swipe_enabled } from 'router/state';
 import { IRouter } from 'router/types';
@@ -9,6 +9,13 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const ModalWrapper = ({ children, router }: Props) => {
+	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
+	useEffect(() => {
+		setTimeout(() => {
+			setEnableBackgroudClose(true);
+		}, 200);
+	}, [router.data.modal_id]);
+
 	const setSwipeEnabled = useSetRecoilState(app_modal_swipe_enabled);
 
 	const _closeListener = (e?: Event) => {
@@ -36,7 +43,10 @@ const ModalWrapper = ({ children, router }: Props) => {
 	}, []);
 
 	return (
-		<div id="ModalWrapper" onClick={() => _closeListener()}>
+		<div
+			id="ModalWrapper"
+			onClick={() => (enableBackgroudClose ? _closeListener() : undefined)}
+		>
 			{children}
 		</div>
 	);

@@ -17,7 +17,6 @@ const Main = ({ id, router }: PanelProps) => {
 			<button
 				onClick={() => {
 					router.setModal('test');
-					clg(1);
 				}}
 			>
 				Go to Test Modal
