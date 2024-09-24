@@ -1,6 +1,8 @@
 import config from 'config';
 import getWebApp from 'functions/TG/getWebApp';
+import useLocalStorage from 'hooks/useLocalStorage';
 import usePlatform from 'hooks/usePlatform';
+import i18next from 'i18next';
 import { useEffect } from 'react';
 import { getViewIdFromName } from 'router/methods/handle';
 import { IRouter } from 'router/types';
@@ -8,6 +10,15 @@ import { IRouter } from 'router/types';
 const useService = (router: IRouter) => {
 	const WebApp = getWebApp();
 	const { platform } = usePlatform();
+	const localStorageLang = useLocalStorage('lang');
+
+	// * All
+	// + Language
+
+	useEffect(() => {
+		const langValue = localStorageLang.getItem();
+		langValue && i18next.changeLanguage(langValue);
+	}, []);
 
 	// * Tg
 	// + Init & Theme
