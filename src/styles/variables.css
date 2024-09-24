@@ -22,14 +22,13 @@
 /* Анимации */
 :root {
 	/* Логотип с версией; Текст – загрузка; */
-	--splash_screen_transition: all .5s ease;
+	/* --splash_screen_transition: all .5s ease; */
 
-
-	/* Переключение отображения таббара */
-	--tabbar_toggle_transition: all .2s ease;
+	/* Tabbar Wrapper. Тема. Переключение отображения */
+	--tabbar_wrapper_transition: transform .2s ease, background-color .2s ease, color .2s ease, border-top .2s ease;
 
 	/* Анимация выбора TabbarItem – иконка и текст */
-	--tabbar_item_transition: all .2s ease;
+	--tabbar_item_transition: background-color .2s ease, color .2s ease;
 
 
 	/* Анимация перемещения круга при отпускании */
@@ -37,33 +36,28 @@
 
 
 	/* Popout Wrapper. Затемнение фона попаута */
-	--popout_wrapper_transition: all .4s ease;
+	--popout_wrapper_transition: background-color .4s ease;
 
 	/* Popout Content. Всплытие попаута */
-	--popout_content_transition: all .2s ease;
+	--popout_content_transition: opacity .2s ease, transform .2s ease;
 
 
 	/* Panel Wrapper. Смена темы */
-	--panel_wrapper_transition: all .2s ease;
+	--panel_wrapper_transition: background-color .2s ease;
 
-	/* Panel Content. */
-	--panel_content_transition: all .2s ease;
-
-	/* Появление контента */
-	--panel_content_render_transition: all .5s ease;
+	/* Panel Content. Появление контента. */
+	--panel_content_transition: opacity .5s ease;
 
 
 	/* Modal Wrapper. Затемнение фона модалки */
-	--modal_wrapper_transition: all .4s ease;
+	--modal_wrapper_transition: background-color .4s ease;
 
-	/* Modal Content. Смена темы. Появление контента. Плавное поднятие */
-	--modal_content_transition: all .2s ease;
+	/* Modal Content. Смена темы. Плавное поднятие. Появление контента. */
+	--modal_content_transition: background-color .2s ease, transform .2s ease, opacity .5s ease;
 
-	/* Появление контента */
-	--modal_content_render_transition: all .5s ease;
 
 	/* Анимация кнопок шапки модалки */
-	--modal_header_buttons_transition: all .2s ease;
+	--modal_header_buttons_transition: color .2s ease;
 }
 
 @import url("./schemes/light.css");

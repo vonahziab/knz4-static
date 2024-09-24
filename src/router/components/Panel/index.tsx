@@ -17,12 +17,8 @@ const Panel = ({ id, children, style, router, showAnimation = true }: Props) => 
 	useEffect(() => {
 		const Content = document.getElementById(`${id}_PanelContent`);
 		if (Content && showAnimation) {
-			Content.style.transition = 'var(--panel_content_render_transition)';
 			setTimeout(() => {
 				Content.style.opacity = '1';
-				setTimeout(() => {
-					Content.style.transition = 'var(--panel_content_transition)';
-				}, 500); // После появления вернуть скорость анимации
 			}, 0);
 		}
 	}, []);

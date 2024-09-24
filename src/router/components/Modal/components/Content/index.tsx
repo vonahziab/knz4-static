@@ -14,12 +14,8 @@ const Content = ({ style, children, id, showAnimation }: Props) => {
 	useEffect(() => {
 		const Content = document.getElementById(`${id}_Modal_Content`);
 		if (Content && showAnimation) {
-			Content.style.transition = 'var(--modal_content_render_transition)';
 			setTimeout(() => {
 				Content.style.opacity = '1';
-				setTimeout(() => {
-					Content.style.transition = 'var(--modal_content_transition)';
-				}, 500); // После появления вернуть скорость анимации
 			}, 200); // Пока поднимется
 		}
 	}, []);

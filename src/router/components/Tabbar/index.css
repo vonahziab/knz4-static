@@ -6,7 +6,7 @@
 	bottom: 0px;
 	background-color: var(--bg_color);
 	border-top: solid 1px var(--border_color);
-	transition: var(--tabbar_toggle_transition);
+	transition: var(--tabbar_wrapper_transition);
 	transform: translateY(100%);
 	z-index: 999;
 }
