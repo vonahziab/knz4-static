@@ -21,8 +21,9 @@ const Content = ({ showAnimation, style, children }: Props) => {
 	return (
 		<div
 			style={{
-				maxHeight: `calc(100vh - 56px - ${platform === 'tg' ? '16px' : '0px'})`,
-				boxSizing: 'border-box',
+				maxHeight: `calc(100vh - 56px - ${
+					platform === 'tg' ? '16px' : '0px'
+				} - 32px - ${bottom})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
