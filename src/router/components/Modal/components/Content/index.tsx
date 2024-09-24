@@ -23,14 +23,14 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				// maxHeight: `calc(100vh - 56px - ${
 				// 	platform === 'tg' ? '16px' : '0px'
 				// } - 32px - ${bottom})`,
-				maxHeight: `calc(100vh - 56px - 32px - ${bottom})`,
+				maxHeight: `calc(100vh - 56px - 32px - ${'24px'})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
 				padding: 16,
 				transition: 'var(--transition_show_content)',
 				opacity: show || !showAnimation ? 1 : 0,
-				paddingBottom: `calc(${bottom} + 16px)`,
+				paddingBottom: `calc(${'24px'} + 16px)`,
 				...style,
 			}}
 		>
