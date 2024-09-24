@@ -46,7 +46,12 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 				alignItems: 'center',
 			}}
 		>
-			<div id="PanelSplashScreen_LogoWrappper">
+			<div
+				id="PanelSplashScreen_LogoWrappper"
+				style={{
+					paddingBottom: bottom,
+				}}
+			>
 				<KoinzTextLogo />
 				<div id="PanelSplashScreen_Logo_Version">v4.0</div>
 			</div>
@@ -55,6 +60,7 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 				style={{
 					bottom: bottom,
 					opacity: showTextLoading ? 0.5 : 0,
+					paddingBottom: bottom,
 				}}
 			>
 				{t('splash_screen.loading')}

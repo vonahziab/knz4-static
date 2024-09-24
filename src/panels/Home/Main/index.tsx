@@ -1,4 +1,5 @@
 import { useSetLocalStorage } from 'hooks/useLocalStorage';
+import useSafeInsets from 'hooks/useSafeInsets';
 import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +11,7 @@ const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
 	const setLocalStorageLang = useSetLocalStorage('lang');
 	const setLocalStorageTheme = useSetLocalStorage('theme');
+	const { bottom } = useSafeInsets();
 
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
@@ -39,6 +41,7 @@ const Main = ({ id, router }: PanelProps) => {
 								display: 'flex',
 								justifyContent: 'center',
 								alignItems: 'center',
+								paddingBottom: bottom,
 							}}
 						>
 							<FaXmark color="var(--primary_color)" size={48} />
