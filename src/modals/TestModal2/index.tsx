@@ -36,7 +36,10 @@ const TestModal2 = ({ router, id }: ModalProps) => {
 				sint eos velit dolore quis iusto libero. Veritatis ut id repudiandae ipsam sit.
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi praesentium
 				consequuntur maiores? Porro fuga nemo iste ratione obcaecati voluptatum veritatis
-				quasi sed! Cum, nesciunt libero minus asperiores fuga facilis placeat?
+				quasi sed! Cum, nesciunt libero minus asperiores fuga facilis placeat? Lorem ipsum
+				dolor sit amet consectetur adipisicing elit. Ducimus itaque non nobis deleniti sit
+				qui fugit hic odio, aperiam magni nesciunt a. Culpa ex ipsum deserunt omnis nam
+				beatae ea?
 			</div>
 		</Modal>
 	);
