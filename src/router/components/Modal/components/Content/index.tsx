@@ -7,8 +7,6 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const Content = ({ showAnimation, style, children }: Props) => {
 	const { bottom } = useSafeInsets();
-	// const { platform } = usePlatform();
-
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -23,15 +21,17 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				// maxHeight: `calc(100vh - 56px - ${
 				// 	platform === 'tg' ? '16px' : '0px'
 				// } - 32px - ${bottom})`,
-				boxSizing: 'border-box',
-				maxHeight: `calc(100vh - 56px)`,
+				// boxSizing: 'border-box',
+				maxHeight: `calc(100vh - 56px - 32px - ${'100px'})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
-				padding: 16,
 				transition: 'var(--transition_show_content)',
 				opacity: show || !showAnimation ? 1 : 0,
-				paddingBottom: `calc(${bottom} + 16px)`,
+
+				padding: 16,
+				paddingBottom: `calc(${'100px'} + 16px)`,
+
 				...style,
 			}}
 		>
