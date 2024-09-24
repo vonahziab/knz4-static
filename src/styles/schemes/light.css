@@ -1,4 +1,4 @@
-body, body[scheme=light] {
+body[scheme=light] {
 	--bg_color: #FAF9F6;
 	--bg_color_2: #F0EFEC;
 	--bg_color_3: #E6E5E2;

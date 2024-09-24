@@ -82,7 +82,7 @@ const useService = (router: IRouter) => {
 	useEffect(() => {
 		if (platform !== 'web') return;
 		const v = localStorageTheme();
-		router.setTheme(((v === 'light' || v === 'dark') && v) || 'light');
+		router.setTheme(((v === 'light' || v === 'dark') && v) || 'dark');
 	}, []);
 
 	// * VK
