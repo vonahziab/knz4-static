@@ -2,6 +2,7 @@ import useService from 'hooks/useService';
 import routes from 'router/routes';
 import { IRouter } from 'router/types';
 import ModalRoot from '../ModalRoot';
+import PopoutWrapper from '../PopoutWrapper';
 import Root from '../Root';
 import Tabbar from '../Tabbar';
 import View from '../View';
@@ -11,7 +12,9 @@ const Router = ({ router }: { router: IRouter }) => {
 
 	return (
 		<>
-			{router.data.popout}
+			{!!router.data.popout && (
+				<PopoutWrapper router={router} children={router.data.popout} />
+			)}
 
 			<ModalRoot selectedModal={router.data.modal_id} router={router}>
 				{routes.modals.map((modal, index) => {

@@ -150,7 +150,27 @@ export const useSetTheme: () => _UseSetTheme = () => {
 
 export const useSetPopout: () => _UseSetPopout = () => {
 	const setPopout = useSetRecoilState(popout_element);
-	const _: _UseSetPopout = Popout => setPopout(Popout);
+	const _: _UseSetPopout = Popout => {
+		const PopoutWrapper = document.getElementById('PopoutWrapper');
+		const PopoutWrapper_Content = document.getElementById('PopoutWrapper_Content');
+
+		if (PopoutWrapper && PopoutWrapper_Content && !Popout) {
+			setTimeout(() => {
+				PopoutWrapper_Content.style.opacity = `0`;
+				PopoutWrapper_Content.style.transform = 'scale(0.8)';
+				setTimeout(() => {
+					PopoutWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+				}, 50);
+			}, 0);
+		}
+
+		setTimeout(
+			() => {
+				setPopout(Popout);
+			},
+			!Popout ? 250 : 0
+		);
+	};
 	return _;
 };
 
