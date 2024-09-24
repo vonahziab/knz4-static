@@ -35,12 +35,22 @@ const Header = ({ id, router, header }: Props) => {
 	}, [dY]);
 
 	useEffect(() => {
+		const Popout_Window = router.data.modal_id && document.getElementById(id);
+
 		const ModalSwipe = document.getElementById('ModalSwipe') as HTMLElement;
 		const ModalSwipeHandler = document.getElementById('ModalSwipeHandler') as HTMLElement;
 
 		const ts = (e: TouchEvent | MouseEvent) => {
 			const Y = (e as any).touches?.[0]?.clientY?.toFixed(0) || (e as any)?.y?.toFixed(0);
 			setY(+Y);
+
+			// * Tg
+			if (Popout_Window && platform === 'tg') {
+				setTimeout(() => {
+					Popout_Window.style.borderTopLeftRadius = `16px`;
+					Popout_Window.style.borderTopRightRadius = `16px`;
+				}, 0);
+			}
 		};
 
 		const tm = (e: TouchEvent | MouseEvent) => {
@@ -81,6 +91,14 @@ const Header = ({ id, router, header }: Props) => {
 
 			if (ModalSwipeHandler) {
 				ModalSwipeHandler.style.backgroundColor = 'var(--modal_swipe_handler)';
+			}
+
+			// * Tg
+			if (Popout_Window && platform === 'tg') {
+				setTimeout(() => {
+					Popout_Window.style.borderTopLeftRadius = `0`;
+					Popout_Window.style.borderTopRightRadius = `0`;
+				}, 0);
 			}
 		};
 

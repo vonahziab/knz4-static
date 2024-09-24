@@ -1,3 +1,4 @@
+import usePlatform from 'hooks/usePlatform';
 import { HTMLAttributes } from 'react';
 import { AppModal } from 'router/routes';
 import { IRouter } from 'router/types';
@@ -13,10 +14,18 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const Modal = ({ id, children, style, router, header, showAnimation = true }: Props) => {
+	const { platform } = usePlatform();
 	return (
-		<div id={id} className="Modal" onClick={e => e.stopPropagation()}>
+		<div
+			id={id}
+			className="Modal"
+			onClick={e => e.stopPropagation()}
+			style={{
+				borderRadius: platform !== 'tg' ? '16px 16px 0 0' : undefined,
+			}}
+		>
 			<Header id={id} router={router} header={header} />
-			<Content style={style} children={children} showAnimation={showAnimation} />
+			<Content style={style} children={children} showAnimation={showAnimation} id={id} />
 		</div>
 	);
 };
