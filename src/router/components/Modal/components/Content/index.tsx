@@ -13,25 +13,6 @@ const Content = ({ showAnimation, style, children, id }: Props) => {
 
 	const [show, setShow] = useState(false);
 
-	// * Tg
-	useEffect(() => {
-		if (platform !== 'tg') return;
-
-		const Modal_Content = document.getElementById(`${id}_Content`);
-		const Modal = document.getElementById(id);
-
-		const isScrollable =
-			!!Modal_Content && Modal_Content.scrollHeight > Modal_Content.clientHeight;
-
-		if (Modal) {
-			if (isScrollable) {
-				Modal.style.borderRadius = '0';
-			} else {
-				Modal.style.borderRadius = '16px 16px 0 0';
-			}
-		}
-	}, []);
-
 	useEffect(() => {
 		setTimeout(() => {
 			setShow(true);
@@ -44,7 +25,7 @@ const Content = ({ showAnimation, style, children, id }: Props) => {
 			style={{
 				maxHeight:
 					platform === 'tg'
-						? `calc(100vh - 56px - 32px - ${bottom})`
+						? `calc(100vh - 56px - 32px - ${bottom}) - 8px`
 						: `calc(100dvh - 56px - 32px - ${bottom})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
