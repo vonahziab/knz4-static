@@ -1,4 +1,4 @@
-import routes, { AppPanel, AppView } from '../routes';
+import routes, { AppModal, AppPanel, AppView } from '../routes';
 
 export const historyClear = (history: AppPanel[][], startPanel: AppPanel, viewId: number) => {
 	let _history: AppPanel[][] = Object.assign([], history);
@@ -38,3 +38,15 @@ export const historyPop = (history: AppPanel[][], viewId: number) => {
 
 export const getViewIdFromName = (view: AppView) =>
 	routes.views.findIndex((item: any) => item.id === view);
+
+export const modalHistoryPush = (history: AppModal[], actionModal: AppModal) => {
+	let _history: AppModal[] = Object.assign([], history);
+	_history.push(actionModal);
+	return _history;
+};
+
+export const modalHistoryPop = (history: AppModal[]) => {
+	let _history: AppModal[] = Object.assign([], history);
+	_history.pop();
+	return _history;
+};

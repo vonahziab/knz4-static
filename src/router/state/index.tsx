@@ -19,7 +19,7 @@ export const app_view_history = atom<AppPanel[][]>({
 
 export const app_modal_history = atom<AppModal[]>({
 	key: 'app_modal_history',
-	default: routes.modals.map(i => i.id),
+	default: [],
 });
 
 export const app_panel = atom<AppPanel[]>({

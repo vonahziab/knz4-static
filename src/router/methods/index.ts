@@ -1,5 +1,6 @@
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import {
+	app_modal_history,
 	app_modal_id,
 	app_panel,
 	app_tabbar_show,
@@ -24,6 +25,8 @@ import {
 	historyClear,
 	historyPop,
 	historyPush,
+	modalHistoryPop,
+	modalHistoryPush,
 	panelClear,
 	panelSet,
 } from './handle';
@@ -96,7 +99,8 @@ export const useGoBack: () => _UseGoBack = () => {
 	const activeView = useRecoilValue(app_view);
 	const viewId = getViewIdFromName(activeView);
 
-	const modal = useRecoilValue(app_modal_id);
+	const [modalHistory, setModalHistory] = useRecoilState(app_modal_history);
+	const [modal, setModal] = useRecoilState(app_modal_id);
 	const closeModal = useCloseModal();
 	// const [popout, setPopout] = useRecoilState(router_popout);
 
@@ -104,7 +108,12 @@ export const useGoBack: () => _UseGoBack = () => {
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 
 		if (modal) {
-			return closeModal();
+			if (modalHistory.length === 1) {
+				return closeModal();
+			} else {
+				setModalHistory(modalHistoryPop(modalHistory));
+				setModal(modalHistory[modalHistory.length - 2]);
+			}
 		}
 
 		// if (popout) {
@@ -141,13 +150,23 @@ export const useSetPopout: () => _UseSetPopout = () => {
 
 export const useSetModal: () => _UseSetModal = () => {
 	const setModal = useSetRecoilState(app_modal_id);
-	const _: _UseSetModal = modal_id => setModal(modal_id);
+	const [modalHistory, setModalHistory] = useRecoilState(app_modal_history);
+
+	const _: _UseSetModal = modal_id => {
+		if (modal_id) {
+			setModalHistory(modalHistoryPush(modalHistory, modal_id));
+		} else {
+			setModalHistory([]);
+		}
+		setModal(modal_id);
+	};
 
 	return _;
 };
 
 export const useCloseModal: () => _UseCloseModal = () => {
 	const [modal, setModal] = useRecoilState(app_modal_id);
+	const setModalHistory = useSetRecoilState(app_modal_history);
 
 	const closeModal = () => {
 		const Popout = document.getElementById('ModalWrapper');
@@ -158,7 +177,10 @@ export const useCloseModal: () => _UseCloseModal = () => {
 			Popout_Window.style.transform = 'translateY(100%)';
 		}
 
-		setTimeout(() => setModal(undefined), 150);
+		setTimeout(() => {
+			setModal(undefined);
+			setModalHistory([]);
+		}, 150);
 	};
 
 	const _: _UseCloseModal = () => closeModal();

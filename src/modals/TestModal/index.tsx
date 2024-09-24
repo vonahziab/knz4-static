@@ -20,6 +20,8 @@ const TestModal = ({ router, id }: ModalProps) => {
 					overflow: 'hidden',
 				}}
 			>
+				<button onClick={() => router.setModal('test2')}>Go to Test Modal 2</button>
+				<button onClick={() => router.goBack()}>Back Go</button>
 				Hello modal :) Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam
 				ab eaque necessitatibus tempora hic eveniet adipisci veritatis nulla ullam.
 				Consequuntur architecto velit ab eum rerum, autem dicta eveniet. Dignissimos,

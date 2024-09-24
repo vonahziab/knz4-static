@@ -1,4 +1,5 @@
 import TestModal from 'modals/TestModal';
+import TestModal2 from 'modals/TestModal2';
 import GameplayMain from 'panels/Gameplay/Main';
 import HomeMain from 'panels/Home/Main';
 import IncomeMain from 'panels/Income/Main';
@@ -17,7 +18,7 @@ export type AppPanel =
 	| AppPanelGameplay
 	| AppPanelSingle;
 
-export type AppModal = 'test';
+export type AppModal = 'test' | 'test2';
 
 type AppPanelPrePage = 'splash_screen';
 type AppPanelSingle = 'test';
@@ -32,6 +33,10 @@ const routes: IRoutes = {
 		{
 			id: 'test',
 			modal: TestModal,
+		},
+		{
+			id: 'test2',
+			modal: TestModal2,
 		},
 	],
 	views: [
