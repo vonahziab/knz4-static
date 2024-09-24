@@ -24,24 +24,38 @@
 	/* Логотип с версией; Текст – загрузка; */
 	--splash_screen_transition: all .5s ease;
 
+
 	/* Переключение отображения таббара */
 	--tabbar_toggle_transition: all .2s ease;
+
 	/* Анимация выбора TabbarItem – иконка и текст */
 	--tabbar_item_transition: all .2s ease;
 
-	
 
-	
-	--show_content_transition: all .5s ease;
-	
+	/* Анимация перемещения круга при отпускании */
 	--swiper_transition: all .2s ease;
-	--popout_transition: all .2s ease;
+
+
+	/* Всплытие попаута */
+	--popout_content_transition: all .2s ease;
+
+	/* Затемнение фона попаута */
+	--popout_wrapper_transition: all .2s ease;
+
+
+
+
+
+	--show_content_transition: all .5s ease;
+
+
+
 	--panel_wrapper_transition: all .2s ease;
-	
+
 	--modal_wrapper_transition: all .2s ease;
 	--modal_header_transition: all .2s ease;
 	--modal_transition: all .2s ease;
-	
+
 	/* --tabbar_transition: all .2s ease; */
 
 }

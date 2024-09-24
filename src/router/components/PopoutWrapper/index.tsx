@@ -21,12 +21,17 @@ const PopoutWrapper = ({ children, router }: Props) => {
 	};
 
 	useEffect(() => {
+		const PopoutWrapper = document.getElementById('PopoutWrapper');
 		const PopoutWrapper_Content = document.getElementById('PopoutWrapper_Content');
-		if (PopoutWrapper_Content) {
+		if (PopoutWrapper && PopoutWrapper_Content) {
 			setTimeout(() => {
-				PopoutWrapper_Content.style.opacity = `1`;
-				PopoutWrapper_Content.style.transform = 'scale(1)';
-			}, 10);
+				PopoutWrapper.style.backgroundColor = 'rgba(0, 0, 0, .7)';
+
+				setTimeout(() => {
+					PopoutWrapper_Content.style.opacity = `1`;
+					PopoutWrapper_Content.style.transform = 'scale(1)';
+				}, 200);
+			}, 0);
 		}
 	}, []);
 
@@ -35,16 +40,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 			id="PopoutWrapper"
 			onClick={() => (enableBackgroudClose ? _closeListener() : () => {})}
 		>
-			<div
-				id="PopoutWrapper_Content"
-				style={{
-					opacity: 0,
-					transition: 'var(--popout_transition)',
-					transform: 'scale(0.8)',
-				}}
-			>
-				{children}
-			</div>
+			<div id="PopoutWrapper_Content">{children}</div>
 		</div>
 	);
 };
