@@ -37,7 +37,7 @@
 
 
 	/* Popout Wrapper. Затемнение фона попаута */
-	--popout_wrapper_transition: all .2s ease;
+	--popout_wrapper_transition: all .4s ease;
 
 	/* Popout Content. Всплытие попаута */
 	--popout_content_transition: all .2s ease;

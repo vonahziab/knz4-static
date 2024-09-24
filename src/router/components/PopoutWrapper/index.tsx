@@ -12,7 +12,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 	useEffect(() => {
 		setTimeout(() => {
 			setEnableBackgroudClose(true);
-		}, 400);
+		}, 400 + 200); // Пока проявится фон и отобразится попаут
 	}, [router.data.popout]);
 
 	const _closeListener = (e?: Event) => {
@@ -30,7 +30,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 				setTimeout(() => {
 					PopoutWrapper_Content.style.opacity = `1`;
 					PopoutWrapper_Content.style.transform = 'scale(1)';
-				}, 200);
+				}, 400); // После полного затемнения выполнить
 			}, 0);
 		}
 	}, []);

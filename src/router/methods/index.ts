@@ -160,7 +160,7 @@ export const useSetPopout: () => _UseSetPopout = () => {
 				PopoutWrapper_Content.style.transform = 'scale(0.8)';
 				setTimeout(() => {
 					PopoutWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-				}, 200);
+				}, 200); // Дождаться исчезновения попаута
 			}, 0);
 		}
 
@@ -168,7 +168,7 @@ export const useSetPopout: () => _UseSetPopout = () => {
 			() => {
 				setPopout(Popout);
 			},
-			!Popout ? 400 : 0
+			!Popout ? 400 + 200 : 0 // Дождаться исчезноваения попаута и осветления фона
 		);
 	};
 	return _;
