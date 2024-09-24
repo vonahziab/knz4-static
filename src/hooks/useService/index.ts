@@ -62,7 +62,7 @@ const useService = (router: IRouter) => {
 	// + Theme
 	useEffect(() => {
 		if (platform !== 'web') return;
-		router.setTheme('dark');
+		router.setTheme('light');
 	}, []);
 
 	// * VK
