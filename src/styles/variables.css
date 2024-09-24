@@ -7,6 +7,10 @@
 :root {
 	--primary_color: #FFBE00;
 	--link_color: #03A9F4;
+	--link_color_click: #0095E0;
+
+	--modal_back_button: var(--link_color);
+	--modal_back_button_click: var(--link_color_click);
 
 	--gold_color: #FFCF40;
 	--silver_color: #C0C0C0;

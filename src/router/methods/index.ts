@@ -115,8 +115,10 @@ export const useGoBack: () => _UseGoBack = () => {
 			if (modalHistory.length === 1) {
 				return closeModal();
 			} else {
-				setModalHistory(modalHistoryPop(modalHistory));
-				setModal(modalHistory[modalHistory.length - 2]);
+				setTimeout(() => {
+					setModalHistory(modalHistoryPop(modalHistory));
+					setModal(modalHistory[modalHistory.length - 2]);
+				}, 250);
 			}
 		}
 
@@ -188,14 +190,16 @@ export const useCloseModal: () => _UseCloseModal = () => {
 		const Popout_Window = modal && document.getElementById(modal);
 
 		if (Popout && Popout_Window) {
-			Popout.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+			setTimeout(() => {
+				Popout.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+			}, 50);
 			Popout_Window.style.transform = 'translateY(100%)';
 		}
 
 		setTimeout(() => {
 			setModal(undefined);
 			setModalHistory([]);
-		}, 150);
+		}, 250);
 	};
 
 	const _: _UseCloseModal = () => closeModal();

@@ -11,6 +11,7 @@ import {
 	useSetView,
 } from './methods';
 import {
+	app_modal_history,
 	app_modal_id,
 	app_modal_swipe_enabled,
 	app_panel,
@@ -37,6 +38,7 @@ export const useRouter = () => {
 			theme: useRecoilValue(app_theme),
 			activeView: useRecoilValue(app_view),
 			history: useRecoilValue(app_view_history),
+			modalHistory: useRecoilValue(app_modal_history),
 			activePanel: useRecoilValue(app_panel),
 			tabbarShow: useRecoilValue(app_tabbar_show),
 			modal_id: useRecoilValue(app_modal_id),

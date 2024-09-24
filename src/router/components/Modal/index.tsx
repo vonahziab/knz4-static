@@ -1,5 +1,6 @@
 import useHaptic from 'hooks/useHaptic';
 import { HTMLAttributes, useEffect, useState } from 'react';
+import { FaAngleLeft } from 'react-icons/fa6';
 import { IoCloseCircle } from 'react-icons/io5';
 import { AppModal } from 'router/routes';
 import { IRouter } from 'router/types';
@@ -97,19 +98,47 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 		};
 	}, [y, dY, enabledSwipeBack]);
 
-	const ots = (e: React.TouchEvent<HTMLDivElement>) => {
+	const otsBack = (e: React.TouchEvent<HTMLDivElement>) => {
+		const target = e.currentTarget;
+		target.style.color = 'var(--modal_back_button_click)';
+	};
+
+	const oteBack = (e: React.TouchEvent<HTMLDivElement>) => {
+		const target = e.currentTarget;
+		setTimeout(() => {
+			target.style.color = 'var(--modal_back_button)';
+		}, 50);
+	};
+
+	const ocBack = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+		e.stopPropagation();
+		e.preventDefault();
+
+		const target = e.currentTarget;
+		target.style.color = 'var(--modal_back_button_click)';
+
+		setTimeout(() => {
+			target.style.color = 'var(--modal_back_button)';
+		}, 50);
+
+		setTimeout(() => {
+			router.goBack();
+		}, 100);
+	};
+
+	const otsClose = (e: React.TouchEvent<HTMLDivElement>) => {
 		const target = e.currentTarget;
 		target.style.color = 'var(--modal_exit_button_click)';
 	};
 
-	const ote = (e: React.TouchEvent<HTMLDivElement>) => {
+	const oteClose = (e: React.TouchEvent<HTMLDivElement>) => {
 		const target = e.currentTarget;
 		setTimeout(() => {
 			target.style.color = 'var(--modal_exit_button)';
 		}, 50);
 	};
 
-	const oc = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+	const ocClose = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		e.stopPropagation();
 		e.preventDefault();
 
@@ -186,7 +215,26 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 							boxSizing: 'border-box',
 						}}
 					>
-						<div style={{ height: 30, minWidth: 30 }} />
+						{router.data.modalHistory.length > 1 ? (
+							<div
+								className="Modal_BackBtn"
+								onTouchStart={e => otsBack(e)}
+								onTouchEnd={e => oteBack(e)}
+								onClick={e => ocBack(e)}
+								style={{
+									height: 30,
+									width: 30,
+									display: 'flex',
+									justifyContent: 'center',
+									alignItems: 'center',
+									color: 'var(--modal_back_button)',
+								}}
+							>
+								<FaAngleLeft size={28} />
+							</div>
+						) : (
+							<div style={{ height: 30, minWidth: 30 }} />
+						)}
 						<div
 							style={{
 								lineHeight: '22px',
@@ -199,9 +247,9 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 						</div>
 						<div
 							className="Modal_CloseBtn"
-							onTouchStart={e => ots(e)}
-							onTouchEnd={e => ote(e)}
-							onClick={e => oc(e)}
+							onTouchStart={e => otsClose(e)}
+							onTouchEnd={e => oteClose(e)}
+							onClick={e => ocClose(e)}
 							style={{
 								height: 30,
 								width: 30,

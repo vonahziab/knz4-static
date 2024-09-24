@@ -49,6 +49,7 @@ export interface IRouter {
 		theme: AppTheme;
 		activeView: AppView;
 		history: AppPanel[][];
+		modalHistory: AppModal[];
 		activePanel: AppPanel[];
 		tabbarShow: boolean;
 		modal_id?: AppModal;
