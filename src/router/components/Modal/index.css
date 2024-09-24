@@ -3,6 +3,6 @@
 	width: 100%;
 	background-color: var(--bg_color);
 	border-radius: 16px 16px 0 0;
-	transition: var(--modal_transition);
+	transition: var(--modal_content_transition);
 	transform: translateY(100%);
 }

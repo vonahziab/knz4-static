@@ -31,12 +31,18 @@ const ModalWrapper = ({ children, router }: Props) => {
 	}, []);
 
 	useEffect(() => {
-		const Popout_Window = router.data.modal_id && document.getElementById(router.data.modal_id);
-		if (Popout_Window) {
+		const ModalWrapper = document.getElementById('ModalWrapper');
+		const ModalContent = router.data.modal_id && document.getElementById(router.data.modal_id);
+
+		if (ModalWrapper && ModalContent) {
 			setTimeout(() => {
-				Popout_Window.style.transform = `translateY(0)`;
-				setSwipeEnabled(true);
-			}, 150);
+				ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, .7)';
+
+				setTimeout(() => {
+					ModalContent.style.transform = `translateY(0)`;
+					setSwipeEnabled(true);
+				}, 2000);
+			}, 0);
 		}
 
 		return () => setSwipeEnabled(false);

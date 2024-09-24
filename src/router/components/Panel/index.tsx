@@ -27,7 +27,7 @@ const Panel = ({ id, children, style, router, showAnimation = true }: Props) => 
 			<div
 				className="Panel"
 				style={{
-					transition: 'var(--show_content_transition)',
+					transition: 'var(--panel_content_transition)',
 					opacity: show || !showAnimation ? 1 : 0,
 					paddingBottom: `calc(${bottom} + 16px + ${isTabbarOpened ? '56px' : '0px'})`,
 					...style,

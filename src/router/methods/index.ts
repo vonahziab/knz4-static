@@ -180,22 +180,37 @@ export const useSetModal: () => _UseSetModal = () => {
 	const old_modal_id = useRecoilValue(app_modal_id);
 
 	const _: _UseSetModal = modal_id => {
-		const Popout_Window = old_modal_id && document.getElementById(old_modal_id);
-		if (Popout_Window) {
-			Popout_Window.style.transform = `translateY(100%)`;
+		const ModalWrapper = document.getElementById('ModalWrapper');
+		const ModalContent = modal_id && document.getElementById(modal_id);
+		const OldModalContent = old_modal_id && document.getElementById(old_modal_id);
+
+		if (OldModalContent && modal_id) {
+			setTimeout(() => {
+				OldModalContent.style.transform = `translateY(100%)`;
+			}, 0);
 		}
 
-		setTimeout(
-			() => {
-				if (modal_id) {
-					setModalHistory(modalHistoryPush(modalHistory, modal_id));
-				} else {
+		if (ModalWrapper && ModalContent && !modal_id) {
+			setTimeout(() => {
+				ModalContent.style.transform = `translateY(100%)`;
+
+				setTimeout(() => {
+					ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+					setModal(undefined);
 					setModalHistory([]);
-				}
-				setModal(modal_id);
-			},
-			modalHistory.length === 0 ? 0 : 250
-		);
+				}, 200);
+			}, 1);
+		}
+
+		if (modal_id) {
+			setTimeout(
+				() => {
+					setModalHistory(modalHistoryPush(modalHistory, modal_id));
+					setModal(modal_id);
+				},
+				modalHistory.length === 0 ? 0 : 200
+			);
+		}
 	};
 
 	return _;
@@ -206,20 +221,23 @@ export const useCloseModal: () => _UseCloseModal = () => {
 	const setModalHistory = useSetRecoilState(app_modal_history);
 
 	const closeModal = () => {
-		const Popout = document.getElementById('ModalWrapper');
-		const Popout_Window = modal && document.getElementById(modal);
+		const ModalWrapper = document.getElementById('ModalWrapper');
+		const ModalContent = modal && document.getElementById(modal);
 
-		if (Popout && Popout_Window) {
+		if (ModalWrapper && ModalContent) {
 			setTimeout(() => {
-				Popout.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-			}, 50);
-			Popout_Window.style.transform = 'translateY(100%)';
+				ModalContent.style.transform = `translateY(100%)`;
+
+				setTimeout(() => {
+					ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+				}, 200);
+			}, 0);
 		}
 
 		setTimeout(() => {
 			setModal(undefined);
 			setModalHistory([]);
-		}, 250);
+		}, 2200);
 	};
 
 	const _: _UseCloseModal = () => closeModal();

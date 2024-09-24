@@ -36,28 +36,28 @@
 	--swiper_transition: all .2s ease;
 
 
-	/* Всплытие попаута */
-	--popout_content_transition: all .2s ease;
-
-	/* Затемнение фона попаута */
+	/* Popout Wrapper. Затемнение фона попаута */
 	--popout_wrapper_transition: all .2s ease;
 
+	/* Popout Content. Всплытие попаута */
+	--popout_content_transition: all .2s ease;
 
 
-
-
-	--show_content_transition: all .5s ease;
-
-
-
+	/* Panel Wrapper. Смена темы */
 	--panel_wrapper_transition: all .2s ease;
 
-	--modal_wrapper_transition: all .2s ease;
-	--modal_header_transition: all .2s ease;
-	--modal_transition: all .2s ease;
+	/* Panel Content. Появление контента */
+	--panel_content_transition: all .2s ease;
 
-	/* --tabbar_transition: all .2s ease; */
 
+	/* Modal Wrapper. Затемнение фона модалки */
+	--modal_wrapper_transition: all 2s ease;
+
+	/* Modal Content. Смена темы. Появление контента. Плавное поднятие */
+	--modal_content_transition: all .2s ease;
+
+	/* Анимация кнопок шапки модалки */
+	--modal_header_buttons_transition: all .2s ease;
 }
 
 @import url("./schemes/light.css");
