@@ -1,3 +1,4 @@
+import useLocalStorage from 'hooks/useLocalStorage';
 import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +8,8 @@ import { PanelProps } from 'router/types';
 
 const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
+	const { setItem } = useLocalStorage('lang');
+
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
 			<h1>Home</h1>
@@ -47,10 +50,22 @@ const Main = ({ id, router }: PanelProps) => {
 
 			<div style={{ textAlign: 'center' }}>{t('home_main.change_language')}</div>
 			<div style={{ display: 'flex', gap: 8 }}>
-				<button style={{ width: '100%' }} onClick={() => i18next.changeLanguage('en')}>
+				<button
+					style={{ width: '100%' }}
+					onClick={() => {
+						setItem('en');
+						i18next.changeLanguage('en');
+					}}
+				>
 					EN
 				</button>
-				<button style={{ width: '100%' }} onClick={() => i18next.changeLanguage('ru')}>
+				<button
+					style={{ width: '100%' }}
+					onClick={() => {
+						setItem('ru');
+						i18next.changeLanguage('ru');
+					}}
+				>
 					RU
 				</button>
 			</div>
