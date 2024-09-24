@@ -6,7 +6,6 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const Content = ({ showAnimation, style, children }: Props) => {
-	const { bottom } = useSafeInsets();
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -18,20 +17,13 @@ const Content = ({ showAnimation, style, children }: Props) => {
 	return (
 		<div
 			style={{
-				// maxHeight: `calc(100vh - 56px - ${
-				// 	platform === 'tg' ? '16px' : '0px'
-				// } - 32px - ${bottom})`,
-				// boxSizing: 'border-box',
-				maxHeight: `calc(100vh - 56px - 32px - ${bottom})`,
+				maxHeight: `calc(100vh - 56px - 32px)`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
 				transition: 'var(--transition_show_content)',
 				opacity: show || !showAnimation ? 1 : 0,
-
 				padding: 16,
-				paddingBottom: `calc(${bottom} + 16px)`,
-
 				...style,
 			}}
 		>
