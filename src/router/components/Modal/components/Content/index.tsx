@@ -23,7 +23,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				// maxHeight: `calc(100vh - 56px - ${
 				// 	platform === 'tg' ? '16px' : '0px'
 				// } - 32px - ${bottom})`,
-				maxHeight: 'calc(100vh - 32px - 56px)',
+				maxHeight: `calc(100vh - 56px - 32px - ${bottom})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
