@@ -194,16 +194,13 @@ export const useSetModal: () => _UseSetModal = () => {
 					setModalHistory(modalHistoryPush(modalHistory, modal_id));
 					setModal(modal_id);
 				},
-				modalHistory.length === 0 ? 0 : 200 + 200 // Если это первая модалка то сразу октрыть, если нет то дождаться пока предыдущая спустится и осветилтся фон
+				modalHistory.length === 0 ? 0 : 200 // Если это первая модалка то сразу октрыть, если нет то дождаться пока предыдущая спустится
 			);
 		} else {
-			setTimeout(
-				() => {
-					setModal(undefined);
-					setModalHistory([]);
-				},
-				modalHistory.length === 0 ? 0 : 200
-			); // Если это первая модалка то сразу октрыть, если нет то дождаться пока предыдущая спустится
+			setTimeout(() => {
+				setModal(undefined);
+				setModalHistory([]);
+			}, 200 + 400); // После скрытия модалки и полного осветления фона
 		}
 	};
 
@@ -224,14 +221,14 @@ export const useCloseModal: () => _UseCloseModal = () => {
 
 				setTimeout(() => {
 					ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-				}, 200);
+				}, 200); // Дождаться пока опустится модалка
 			}, 0);
 		}
 
 		setTimeout(() => {
 			setModal(undefined);
 			setModalHistory([]);
-		}, 200 + 200); // После скрытия модалки и полного осветления фона
+		}, 200 + 400); // После скрытия модалки и полного осветления фона
 	};
 
 	const _: _UseCloseModal = () => closeModal();

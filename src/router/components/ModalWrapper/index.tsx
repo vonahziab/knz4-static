@@ -12,8 +12,8 @@ const ModalWrapper = ({ children, router }: Props) => {
 	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
 	useEffect(() => {
 		setTimeout(() => {
-			setEnableBackgroudClose(true);
-		}, 400);
+			router.data.modal_id && setEnableBackgroudClose(true);
+		}, 400 + 200); // Пока проявится фон и поднимется модалка
 	}, [router.data.modal_id]);
 
 	const setSwipeEnabled = useSetRecoilState(app_modal_swipe_enabled);
@@ -41,7 +41,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 				setTimeout(() => {
 					ModalContent.style.transform = `translateY(0)`;
 					setSwipeEnabled(true);
-				}, 200); // После полного затемнения выполнить
+				}, 400); // После полного затемнения выполнить
 			}, 0);
 		}
 
