@@ -9,10 +9,19 @@ interface Props extends HTMLAttributes<HTMLElement> {
 	id: AppModal;
 	router: IRouter;
 	header?: string;
+	showAnimation?: boolean;
 }
 
-const Modal = ({ id, children, style, router, header }: Props) => {
+const Modal = ({ id, children, style, router, header, showAnimation = true }: Props) => {
 	const haptic = useHaptic();
+
+	const [show, setShow] = useState(false);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setShow(true);
+		}, 50);
+	}, []);
 
 	const [y, setY] = useState(0);
 	const [dY, setDY] = useState(0);
@@ -215,7 +224,14 @@ const Modal = ({ id, children, style, router, header }: Props) => {
 				)}
 			</div>
 
-			{children}
+			<div
+				style={{
+					transition: 'var(--transition_show_panel)',
+					opacity: show || !showAnimation ? 1 : 0,
+				}}
+			>
+				{children}
+			</div>
 		</div>
 	);
 };
