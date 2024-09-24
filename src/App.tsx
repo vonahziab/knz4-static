@@ -1,11 +1,13 @@
 import config from 'config';
 import getWebApp from 'functions/TG/getWebApp';
+import usePlatform from 'hooks/usePlatform';
 import { FC, useEffect } from 'react';
 import { Router, useRouter } from 'router';
 import { getViewIdFromName } from 'router/methods/handle';
 
 const App: FC = () => {
 	const router = useRouter();
+	const { platform } = usePlatform();
 	const WebApp = getWebApp();
 
 	useEffect(() => {
@@ -41,7 +43,9 @@ const App: FC = () => {
 			WebApp?.isVersionAtLeast('6.9') &&
 				WebApp?.setHeaderColor(config.colors[WebApp?.colorScheme].header);
 
-			router.setTheme(WebApp?.colorScheme || 'light');
+			platform === 'tg'
+				? router.setTheme(WebApp?.colorScheme || 'light')
+				: router.setTheme('dark');
 		};
 
 		themeChanged();

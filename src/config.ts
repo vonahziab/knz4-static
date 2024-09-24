@@ -4,14 +4,14 @@ const config = {
 	},
 	colors: {
 		light: {
-			header: '#F9F9F9',
+			header: '#FAF9F6',
 		},
 		dark: {
 			header: '#0E0D0B',
 		},
 	},
 	links: {},
-	version: '0.111',
+	version: '0.112',
 };
 
 export default config;

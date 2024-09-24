@@ -2,7 +2,9 @@ import getWebApp from 'functions/TG/getWebApp';
 
 export type Platform = 'tg' | 'vk' | 'web';
 
-const usePlatform = () => {
+const usePlatform = (): {
+	platform: 'tg' | 'web' | 'vk';
+} => {
 	const WebApp = getWebApp();
 
 	const isTg = !!WebApp.initData;
