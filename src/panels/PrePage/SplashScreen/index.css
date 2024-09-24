@@ -1,5 +1,5 @@
 #PanelSplashScreen_LogoWrappper {
-	transition: var(--loader_transition);
+	transition: var(--splash_screen_transition);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -16,7 +16,6 @@
 	opacity: 0.5;
 	letter-spacing: 1px;
 	transform: translateX(0);
-	transition: var(--loader_transition);
 }
 
 #PanelSplashScreen_LoadingText {
@@ -27,6 +26,6 @@
 	line-height: 18px;
 	font-size: 18px;
 	color: var(--hint_color);
-	transition: var(--loader_transition);
+	transition: var(--splash_screen_transition);
 	text-align: center;
 }

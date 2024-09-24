@@ -31,8 +31,8 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 				setTimeout(() => {
 					router.setTabbarShow(true);
 					router.setPanel('home_main');
-				}, 500);
-			}, 50 + 500 + 200);
+				}, 500); // анимация исчезноваения
+			}, 500 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
 		}
 	}, []);
 

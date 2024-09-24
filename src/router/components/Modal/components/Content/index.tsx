@@ -30,7 +30,7 @@ const Content = ({ showAnimation, style, children, id }: Props) => {
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
-				transition: 'var(--transition_show_content)',
+				transition: 'var(--show_content_transition)',
 				opacity: show || !showAnimation ? 1 : 0,
 				padding: 16,
 				paddingBottom: `calc(${bottom} + 16px)`,
