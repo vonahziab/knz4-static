@@ -1,3 +1,4 @@
+import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { IRouter } from 'router/types';
 import './index.css';
@@ -8,6 +9,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const PopoutWrapper = ({ children, router }: Props) => {
 	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
+	const { bottom } = useSafeInsets();
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -42,7 +44,13 @@ const PopoutWrapper = ({ children, router }: Props) => {
 			className="PopoutWrapper"
 			onClick={() => (enableBackgroudClose ? _closeListener() : () => {})}
 		>
-			<div id="PopoutContent" className="PopoutContent">
+			<div
+				id="PopoutContent"
+				className="PopoutContent"
+				style={{
+					paddingBottom: bottom,
+				}}
+			>
 				{children}
 			</div>
 		</div>
