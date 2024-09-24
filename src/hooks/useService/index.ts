@@ -1,6 +1,6 @@
 import config from 'config';
 import getWebApp from 'functions/TG/getWebApp';
-import useLocalStorage from 'hooks/useLocalStorage';
+import { useLocalStorageValue } from 'hooks/useLocalStorage';
 import usePlatform from 'hooks/usePlatform';
 import i18next from 'i18next';
 import { useEffect } from 'react';
@@ -10,13 +10,13 @@ import { IRouter } from 'router/types';
 const useService = (router: IRouter) => {
 	const WebApp = getWebApp();
 	const { platform } = usePlatform();
-	const localStorageLang = useLocalStorage('lang');
-	const localStorageTheme = useLocalStorage('theme');
+	const localStorageLang = useLocalStorageValue('lang');
+	const localStorageTheme = useLocalStorageValue('theme');
 
 	// * All
 	// + Language
 	useEffect(() => {
-		const langValue = localStorageLang.getItem();
+		const langValue = localStorageLang();
 		langValue && i18next.changeLanguage(langValue);
 	}, []);
 
@@ -73,7 +73,7 @@ const useService = (router: IRouter) => {
 	// + Theme
 	useEffect(() => {
 		if (platform !== 'web') return;
-		const v = localStorageTheme.getItem();
+		const v = localStorageTheme();
 		router.setTheme(((v === 'light' || v === 'dark') && v) || 'light');
 	}, []);
 

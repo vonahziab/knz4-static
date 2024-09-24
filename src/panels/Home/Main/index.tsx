@@ -1,4 +1,4 @@
-import useLocalStorage from 'hooks/useLocalStorage';
+import { useSetLocalStorage } from 'hooks/useLocalStorage';
 import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -8,8 +8,8 @@ import { PanelProps } from 'router/types';
 
 const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
-	const localStorageLang = useLocalStorage('lang');
-	const localStorageTheme = useLocalStorage('theme');
+	const setLocalStorageLang = useSetLocalStorage('lang');
+	const setLocalStorageTheme = useSetLocalStorage('theme');
 
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
@@ -54,7 +54,7 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						localStorageLang.setItem('en');
+						setLocalStorageLang('en');
 						i18next.changeLanguage('en');
 					}}
 				>
@@ -63,7 +63,7 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						localStorageLang.setItem('ru');
+						setLocalStorageLang('ru');
 						i18next.changeLanguage('ru');
 					}}
 				>
@@ -76,7 +76,7 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						localStorageTheme.setItem('dark');
+						setLocalStorageTheme('dark');
 						router.setTheme('dark');
 					}}
 				>
@@ -85,7 +85,7 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						localStorageTheme.setItem('light');
+						setLocalStorageTheme('light');
 						router.setTheme('light');
 					}}
 				>
