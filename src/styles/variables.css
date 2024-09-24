@@ -22,7 +22,7 @@
 /* Анимации */
 :root {
 	--default_transition: all .2s ease;
-	--transition_show_panel: all .5s ease;
+	--transition_show_content: all .5s ease;
 	--loader_transition: all .5s ease;
 	--tabbar_transition: all .2s ease;
 }
