@@ -17,7 +17,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 	return (
 		<div
 			style={{
-				maxHeight: `calc(100vh - 56px - 32px)`,
+				maxHeight: `calc(70vh - 56px - 32px)`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
