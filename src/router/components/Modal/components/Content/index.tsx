@@ -25,7 +25,7 @@ const Content = ({ showAnimation, style, children, id }: Props) => {
 			style={{
 				maxHeight:
 					platform === 'tg'
-						? `calc(100vh - 56px - 32px - ${bottom}) - 8px`
+						? `calc(100vh - 56px - 32px - ${bottom} - 8px)`
 						: `calc(100dvh - 56px - 32px - ${bottom})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
