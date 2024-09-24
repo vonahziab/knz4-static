@@ -1,6 +1,6 @@
 /* Отступ нижний */
 :root {
-	--tg-safe-area-inset-bottom: calc(100vh - var(--tg-viewport-height, 100vh));
+	--tg-safe-area-inset-bottom: calc(100vh - var(--tg-viewport-stable-height, 100vh));
 }
 
 /* Цвета */
