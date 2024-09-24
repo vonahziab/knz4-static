@@ -25,7 +25,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				transition: 'var(--transition_show_content)',
 				opacity: show || !showAnimation ? 1 : 0,
 				padding: 16,
-				paddingBottom: `calc(${bottom})`,
+				paddingBottom: `calc(${bottom} + 16px)`,
 				...style,
 			}}
 		>
