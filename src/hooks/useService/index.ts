@@ -45,7 +45,9 @@ const useService = (router: IRouter) => {
 		if (platform !== 'tg') return;
 		if (!WebApp.isVersionAtLeast('6.9')) return;
 
-		WebApp.setHeaderColor(config.colors[router.data.theme].header);
+		if (router.data.theme === 'light' || router.data.theme === 'dark') {
+			WebApp.setHeaderColor(config.colors[router.data.theme].header);
+		}
 	}, [router.data.theme]);
 
 	// + BackButton
