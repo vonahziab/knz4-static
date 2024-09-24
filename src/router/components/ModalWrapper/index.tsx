@@ -41,7 +41,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 				setTimeout(() => {
 					ModalContent.style.transform = `translateY(0)`;
 					setSwipeEnabled(true);
-				}, 2000);
+				}, 200); // После полного затемнения выполнить
 			}, 0);
 		}
 

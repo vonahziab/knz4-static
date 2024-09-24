@@ -180,8 +180,6 @@ export const useSetModal: () => _UseSetModal = () => {
 	const old_modal_id = useRecoilValue(app_modal_id);
 
 	const _: _UseSetModal = modal_id => {
-		const ModalWrapper = document.getElementById('ModalWrapper');
-		const ModalContent = modal_id && document.getElementById(modal_id);
 		const OldModalContent = old_modal_id && document.getElementById(old_modal_id);
 
 		if (OldModalContent && modal_id) {
@@ -190,26 +188,22 @@ export const useSetModal: () => _UseSetModal = () => {
 			}, 0);
 		}
 
-		if (ModalWrapper && ModalContent && !modal_id) {
-			setTimeout(() => {
-				ModalContent.style.transform = `translateY(100%)`;
-
-				setTimeout(() => {
-					ModalWrapper.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-					setModal(undefined);
-					setModalHistory([]);
-				}, 200);
-			}, 1);
-		}
-
 		if (modal_id) {
 			setTimeout(
 				() => {
 					setModalHistory(modalHistoryPush(modalHistory, modal_id));
 					setModal(modal_id);
 				},
-				modalHistory.length === 0 ? 0 : 200
+				modalHistory.length === 0 ? 0 : 200 + 200 // Если это первая модалка то сразу октрыть, если нет то дождаться пока предыдущая спустится и осветилтся фон
 			);
+		} else {
+			setTimeout(
+				() => {
+					setModal(undefined);
+					setModalHistory([]);
+				},
+				modalHistory.length === 0 ? 0 : 200
+			); // Если это первая модалка то сразу октрыть, если нет то дождаться пока предыдущая спустится
 		}
 	};
 
@@ -237,7 +231,7 @@ export const useCloseModal: () => _UseCloseModal = () => {
 		setTimeout(() => {
 			setModal(undefined);
 			setModalHistory([]);
-		}, 2200);
+		}, 200 + 200); // После скрытия модалки и полного осветления фона
 	};
 
 	const _: _UseCloseModal = () => closeModal();
