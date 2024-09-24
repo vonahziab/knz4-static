@@ -21,7 +21,7 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 	useEffect(() => {
 		setTimeout(() => {
 			setShow(true);
-		}, 50);
+		}, 200);
 	}, []);
 
 	const [y, setY] = useState(0);
