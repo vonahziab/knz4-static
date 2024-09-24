@@ -1,4 +1,5 @@
 import useHaptic from 'hooks/useHaptic';
+import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { IoCloseCircle } from 'react-icons/io5';
@@ -15,6 +16,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const Modal = ({ id, children, style, router, header, showAnimation = true }: Props) => {
 	const haptic = useHaptic();
+	const { bottom } = useSafeInsets();
 
 	const [show, setShow] = useState(false);
 
@@ -170,7 +172,6 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 				overflowY: 'scroll',
 				transition: 'var(--default_transition)',
 				transform: 'translateY(100%)',
-				...style,
 			}}
 			onClick={e => e.stopPropagation()}
 		>
@@ -278,6 +279,12 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 				style={{
 					transition: 'var(--transition_show_panel)',
 					opacity: show || !showAnimation ? 1 : 0,
+					padding: 16,
+					overflowX: 'hidden',
+					paddingBottom: `calc(${bottom} + 16px)`,
+					display: 'flex',
+					flexDirection: 'column',
+					...style,
 				}}
 			>
 				{children}
