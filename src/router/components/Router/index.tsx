@@ -1,3 +1,4 @@
+import useService from 'hooks/useService';
 import routes from 'router/routes';
 import { IRouter } from 'router/types';
 import ModalRoot from '../ModalRoot';
@@ -6,6 +7,8 @@ import Tabbar from '../Tabbar';
 import View from '../View';
 
 const Router = ({ router }: { router: IRouter }) => {
+	useService(router);
+
 	return (
 		<>
 			{router.data.popout}
