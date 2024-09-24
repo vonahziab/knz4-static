@@ -29,8 +29,6 @@ const useService = (router: IRouter) => {
 		if (!WebApp.isVersionAtLeast('6.9')) return;
 
 		const themeChanged = () => {
-			WebApp.setHeaderColor(config.colors[WebApp?.colorScheme].header);
-
 			platform === 'tg'
 				? router.setTheme(WebApp?.colorScheme || 'light')
 				: router.setTheme('dark');
@@ -41,6 +39,14 @@ const useService = (router: IRouter) => {
 		WebApp?.onEvent('themeChanged', themeChanged);
 		return () => WebApp?.offEvent('themeChanged', themeChanged);
 	}, []);
+
+	// + Theme
+	useEffect(() => {
+		if (platform !== 'tg') return;
+		if (!WebApp.isVersionAtLeast('6.9')) return;
+
+		WebApp.setHeaderColor(config.colors[router.data.theme].header);
+	}, [router.data.theme]);
 
 	// + BackButton
 	useEffect(() => {
