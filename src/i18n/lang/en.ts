@@ -5,6 +5,7 @@ const en = {
 		},
 		home_main: {
 			change_language: 'Change language:',
+			change_theme: 'Change theme:',
 		},
 	},
 };

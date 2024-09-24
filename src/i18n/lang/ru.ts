@@ -5,6 +5,7 @@ const ru = {
 		},
 		home_main: {
 			change_language: 'Сменить язык:',
+			change_theme: 'Сменить тему:',
 		},
 	},
 };

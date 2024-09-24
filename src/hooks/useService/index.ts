@@ -11,10 +11,10 @@ const useService = (router: IRouter) => {
 	const WebApp = getWebApp();
 	const { platform } = usePlatform();
 	const localStorageLang = useLocalStorage('lang');
+	const localStorageTheme = useLocalStorage('theme');
 
 	// * All
 	// + Language
-
 	useEffect(() => {
 		const langValue = localStorageLang.getItem();
 		langValue && i18next.changeLanguage(langValue);
@@ -73,7 +73,8 @@ const useService = (router: IRouter) => {
 	// + Theme
 	useEffect(() => {
 		if (platform !== 'web') return;
-		router.setTheme('light');
+		const v = localStorageTheme.getItem();
+		router.setTheme(((v === 'light' || v === 'dark') && v) || 'light');
 	}, []);
 
 	// * VK

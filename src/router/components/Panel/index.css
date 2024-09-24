@@ -9,6 +9,7 @@
 	overflow: scroll;
 	background-color: var(--bg_color);
 	color: var(--text_color);
+	transition: var(--default_transition);
 }
 
 .Panel {

@@ -8,7 +8,8 @@ import { PanelProps } from 'router/types';
 
 const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
-	const { setItem } = useLocalStorage('lang');
+	const localStorageLang = useLocalStorage('lang');
+	const localStorageTheme = useLocalStorage('theme');
 
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
@@ -53,7 +54,7 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						setItem('en');
+						localStorageLang.setItem('en');
 						i18next.changeLanguage('en');
 					}}
 				>
@@ -62,11 +63,33 @@ const Main = ({ id, router }: PanelProps) => {
 				<button
 					style={{ width: '100%' }}
 					onClick={() => {
-						setItem('ru');
+						localStorageLang.setItem('ru');
 						i18next.changeLanguage('ru');
 					}}
 				>
 					RU
+				</button>
+			</div>
+
+			<div style={{ textAlign: 'center' }}>{t('home_main.change_theme')}</div>
+			<div style={{ display: 'flex', gap: 8 }}>
+				<button
+					style={{ width: '100%' }}
+					onClick={() => {
+						localStorageTheme.setItem('dark');
+						router.setTheme('dark');
+					}}
+				>
+					Dark
+				</button>
+				<button
+					style={{ width: '100%' }}
+					onClick={() => {
+						localStorageTheme.setItem('light');
+						router.setTheme('light');
+					}}
+				>
+					Light
 				</button>
 			</div>
 		</Panel>
