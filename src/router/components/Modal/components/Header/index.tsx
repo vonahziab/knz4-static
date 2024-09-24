@@ -1,4 +1,5 @@
 import useHaptic from 'hooks/useHaptic';
+import usePlatform from 'hooks/usePlatform';
 import { HTMLAttributes, useEffect, useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { IoCloseCircle } from 'react-icons/io5';
@@ -13,6 +14,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const Header = ({ id, router, header }: Props) => {
 	const haptic = useHaptic();
+	const { platform } = usePlatform();
 
 	const [y, setY] = useState(0);
 	const [dY, setDY] = useState(0);
@@ -190,7 +192,7 @@ const Header = ({ id, router, header }: Props) => {
 						boxSizing: 'border-box',
 					}}
 				>
-					{router.data.modalHistory.length > 1 ? (
+					{router.data.modalHistory.length > 1 && platform !== 'tg' ? (
 						<div
 							className="Modal_BackBtn"
 							onTouchStart={e => otsBack(e)}

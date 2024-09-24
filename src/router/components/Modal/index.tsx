@@ -3,6 +3,7 @@ import { AppModal } from 'router/routes';
 import { IRouter } from 'router/types';
 import Content from './components/Content';
 import Header from './components/Header';
+import './index.css';
 
 interface Props extends HTMLAttributes<HTMLElement> {
 	id: AppModal;
@@ -13,20 +14,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const Modal = ({ id, children, style, router, header, showAnimation = true }: Props) => {
 	return (
-		<div
-			id={id}
-			style={{
-				maxHeight: '100%',
-				width: '100%',
-				backgroundColor: 'var(--bg_color)',
-				display: 'block',
-				borderRadius: '16px 16px 0 0',
-				overflowY: 'scroll',
-				transition: 'var(--default_transition)',
-				transform: 'translateY(100%)',
-			}}
-			onClick={e => e.stopPropagation()}
-		>
+		<div id={id} className="Modal" onClick={e => e.stopPropagation()}>
 			<Header id={id} router={router} header={header} />
 			<Content style={style} children={children} showAnimation={showAnimation} />
 		</div>
