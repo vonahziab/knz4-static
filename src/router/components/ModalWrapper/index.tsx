@@ -11,12 +11,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 const ModalWrapper = ({ children, router }: Props) => {
 	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
 	useEffect(() => {
-		const Modal = document.getElementById('ModalWrapper');
-
 		setTimeout(() => {
-			if (Modal) {
-				Modal.style.background = 'rgba(0, 0, 0, 0.7)';
-			}
 			setEnableBackgroudClose(true);
 		}, 400);
 	}, [router.data.modal_id]);

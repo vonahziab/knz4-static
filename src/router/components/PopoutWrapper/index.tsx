@@ -10,12 +10,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
 
 	useEffect(() => {
-		const Popout = document.getElementById('PopoutWrapper');
-
 		setTimeout(() => {
-			if (Popout) {
-				Popout.style.background = 'rgba(0, 0, 0, 0.7)';
-			}
 			setEnableBackgroudClose(true);
 		}, 400);
 	}, [router.data.popout]);

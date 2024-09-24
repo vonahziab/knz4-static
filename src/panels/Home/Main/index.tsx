@@ -32,7 +32,6 @@ const Main = ({ id, router }: PanelProps) => {
 								width: 100,
 								padding: 16,
 								borderRadius: 32,
-								// border: '1px solid var(--primary_color)',
 								display: 'flex',
 								justifyContent: 'center',
 								alignItems: 'center',
