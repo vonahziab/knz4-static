@@ -22,7 +22,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				// 	platform === 'tg' ? '16px' : '0px'
 				// } - 32px - ${bottom})`,
 				// boxSizing: 'border-box',
-				maxHeight: `calc(100vh - 56px - 32px - ${'100px'})`,
+				maxHeight: `calc(100vh - 56px - 32px - ${bottom})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
@@ -30,7 +30,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 				opacity: show || !showAnimation ? 1 : 0,
 
 				padding: 16,
-				paddingBottom: `calc(${'100px'} + 16px)`,
+				paddingBottom: `calc(${bottom} + 16px)`,
 
 				...style,
 			}}
