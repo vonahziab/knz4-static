@@ -8,10 +8,16 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const PopoutWrapper = ({ children, router }: Props) => {
 	const [enableBackgroudClose, setEnableBackgroudClose] = useState(false);
+
 	useEffect(() => {
+		const Popout = document.getElementById('PopoutWrapper');
+
 		setTimeout(() => {
+			if (Popout) {
+				Popout.style.background = 'rgba(0, 0, 0, 0.8)';
+			}
 			setEnableBackgroudClose(true);
-		}, 200);
+		}, 400);
 	}, [router.data.popout]);
 
 	const _closeListener = (e?: Event) => {
