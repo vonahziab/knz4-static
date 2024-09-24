@@ -10,6 +10,7 @@ const App: FC = () => {
 
 	useEffect(() => {
 		WebApp.ready();
+		WebApp.expand();
 	}, []);
 
 	useEffect(() => {
