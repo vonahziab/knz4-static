@@ -35,7 +35,9 @@ const Modal = ({ id, children, style, router, header, showAnimation = true }: Pr
 	useEffect(() => {
 		const Popout_Window = router.data.modal_id && document.getElementById(id);
 		if (Popout_Window && router.data.modal_swipe_enabled) {
-			Popout_Window.style.transform = `translateY(${dY}px)`;
+			setTimeout(() => {
+				Popout_Window.style.transform = `translateY(${dY}px)`;
+			}, 0);
 		}
 	}, [dY]);
 

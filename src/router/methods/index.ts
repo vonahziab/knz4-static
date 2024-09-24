@@ -108,6 +108,10 @@ export const useGoBack: () => _UseGoBack = () => {
 		const _viewId = __viewId >= 0 ? __viewId : viewId;
 
 		if (modal) {
+			const Popout_Window = modal && document.getElementById(modal);
+			if (Popout_Window) {
+				Popout_Window.style.transform = `translateY(100%)`;
+			}
 			if (modalHistory.length === 1) {
 				return closeModal();
 			} else {
@@ -151,14 +155,22 @@ export const useSetPopout: () => _UseSetPopout = () => {
 export const useSetModal: () => _UseSetModal = () => {
 	const setModal = useSetRecoilState(app_modal_id);
 	const [modalHistory, setModalHistory] = useRecoilState(app_modal_history);
+	const old_modal_id = useRecoilValue(app_modal_id);
 
 	const _: _UseSetModal = modal_id => {
-		if (modal_id) {
-			setModalHistory(modalHistoryPush(modalHistory, modal_id));
-		} else {
-			setModalHistory([]);
+		const Popout_Window = old_modal_id && document.getElementById(old_modal_id);
+		if (Popout_Window) {
+			Popout_Window.style.transform = `translateY(100%)`;
 		}
-		setModal(modal_id);
+
+		setTimeout(() => {
+			if (modal_id) {
+				setModalHistory(modalHistoryPush(modalHistory, modal_id));
+			} else {
+				setModalHistory([]);
+			}
+			setModal(modal_id);
+		}, 200);
 	};
 
 	return _;
