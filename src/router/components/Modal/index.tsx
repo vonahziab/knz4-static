@@ -1,4 +1,3 @@
-import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes } from 'react';
 import { AppModal } from 'router/routes';
 import { IRouter } from 'router/types';
@@ -14,17 +13,8 @@ interface Props extends HTMLAttributes<HTMLElement> {
 }
 
 const Modal = ({ id, children, style, router, header, showAnimation = true }: Props) => {
-	const { bottom } = useSafeInsets();
-
 	return (
-		<div
-			id={id}
-			className="Modal"
-			onClick={e => e.stopPropagation()}
-			style={{
-				paddingBottom: `calc(${bottom})`,
-			}}
-		>
+		<div id={id} className="Modal" onClick={e => e.stopPropagation()}>
 			<Header id={id} router={router} header={header} />
 			<Content style={style} children={children} showAnimation={showAnimation} />
 		</div>
