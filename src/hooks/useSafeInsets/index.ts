@@ -3,11 +3,10 @@ import usePlatform from 'hooks/usePlatform';
 const useSafeInsets = () => {
 	const { platform } = usePlatform();
 
-	const safeAreaInsetBottom =
-		platform === 'tg' ? 'var(--tg-safe-area-inset-bottom)' : 'env(safe-area-inset-bottom)';
-
 	return {
-		bottom: safeAreaInsetBottom,
+		bottom:
+			platform === 'tg' ? 'var(--tg-safe-area-inset-bottom)' : 'env(safe-area-inset-bottom)',
+		top: platform === 'tg' ? '0px' : 'env(safe-area-inset-top)',
 	};
 };
 
