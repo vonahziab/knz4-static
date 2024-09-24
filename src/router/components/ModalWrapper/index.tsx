@@ -15,7 +15,7 @@ const ModalWrapper = ({ children, router }: Props) => {
 
 		setTimeout(() => {
 			if (Modal) {
-				Modal.style.background = 'rgba(0, 0, 0, 0.8)';
+				Modal.style.background = 'rgba(0, 0, 0, 0.7)';
 			}
 			setEnableBackgroudClose(true);
 		}, 400);

@@ -14,7 +14,7 @@ const PopoutWrapper = ({ children, router }: Props) => {
 
 		setTimeout(() => {
 			if (Popout) {
-				Popout.style.background = 'rgba(0, 0, 0, 0.8)';
+				Popout.style.background = 'rgba(0, 0, 0, 0.7)';
 			}
 			setEnableBackgroudClose(true);
 		}, 400);
