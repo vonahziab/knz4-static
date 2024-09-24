@@ -1,3 +1,4 @@
+import usePlatform from 'hooks/usePlatform';
 import useSafeInsets from 'hooks/useSafeInsets';
 import { HTMLAttributes, useEffect, useState } from 'react';
 
@@ -7,6 +8,7 @@ interface Props extends HTMLAttributes<HTMLElement> {
 
 const Content = ({ showAnimation, style, children }: Props) => {
 	const { bottom } = useSafeInsets();
+	const { platform } = usePlatform();
 
 	const [show, setShow] = useState(false);
 
@@ -19,7 +21,7 @@ const Content = ({ showAnimation, style, children }: Props) => {
 	return (
 		<div
 			style={{
-				maxHeight: 'calc(100vh - 56px - 32px)',
+				maxHeight: `calc(100vh - 56px - 32px - ${platform === 'tg' ? '16px' : '0px'})`,
 				overflow: 'hidden scroll',
 				display: 'flex',
 				flexDirection: 'column',
