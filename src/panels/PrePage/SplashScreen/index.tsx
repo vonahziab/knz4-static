@@ -32,7 +32,7 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 					router.setTabbarShow(true);
 					router.setPanel('home_main');
 				}, 500); // анимация исчезноваения
-			}, 0 + 500 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
+			}, 0 + 522200 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
 		}
 	}, []);
 
@@ -58,9 +58,9 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 			<div
 				id="PanelSplashScreen_LoadingText"
 				style={{
-					bottom: bottom,
+					bottom: 0,
 					opacity: showTextLoading ? 0.5 : 0,
-					paddingBottom: bottom,
+					paddingBottom: `calc(16px + ${bottom})`,
 				}}
 			>
 				{t('splash_screen.loading')}

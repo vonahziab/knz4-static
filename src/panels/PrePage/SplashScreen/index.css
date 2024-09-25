@@ -22,7 +22,7 @@
 	position: fixed;
 	box-sizing: border-box;
 	width: calc(100vw - 32px);
-	padding: 18px;
+	padding: 16px;
 	line-height: 18px;
 	font-size: 18px;
 	color: var(--hint_color);
