@@ -13,7 +13,7 @@ const Main = ({ id, router }: PanelProps) => {
 
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
-			<h1>Home</h1>
+			<h1>Home 22</h1>
 			<button onClick={() => router.goForward('test')}>Go to Test Panel</button>
 			<button onClick={() => router.setTabbarShow(!router.data.tabbarShow)}>
 				Toggle Tabbar
