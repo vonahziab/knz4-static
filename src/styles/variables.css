@@ -43,7 +43,7 @@
 
 
 	/* Panel Wrapper. Смена темы */
-	--panel_wrapper_transition: background-color .2s ease;
+	--panel_wrapper_transition: background-color .2s ease, color .2s ease ;
 
 	/* Panel Content. Появление контента. */
 	--panel_content_transition: opacity .5s ease;
