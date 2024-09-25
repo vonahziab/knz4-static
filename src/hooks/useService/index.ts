@@ -26,6 +26,10 @@ const useService = (router: IRouter) => {
 		if (platform !== 'tg') return;
 		WebApp.ready();
 
+		setTimeout(() => {
+			WebApp.expand();
+		}, 500);
+
 		if (!WebApp.isVersionAtLeast('6.9')) return;
 
 		const themeChanged = () => {
