@@ -25,7 +25,7 @@
 	--splash_screen_transition: transform .5s ease, opacity .5s ease;
 
 	/* Tabbar Wrapper. Тема. Переключение отображения */
-	--tabbar_wrapper_transition: transform .2s ease, background-color .2s ease, color .2s ease, border-top .2s ease;
+	--tabbar_wrapper_transition: transform .2s ease, background-color .2s ease, color .2s ease, border-top .2s ease, padding-bottom .2s ease;
 
 	/* Анимация выбора TabbarItem – иконка и текст */
 	--tabbar_item_transition: background-color .2s ease, color .2s ease;
