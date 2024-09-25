@@ -11,7 +11,7 @@ const config = {
 		},
 	},
 	links: {},
-	version: '0.181',
+	version: '0.182',
 };
 
 export default config;

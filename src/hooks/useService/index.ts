@@ -52,7 +52,7 @@ const useService = (router: IRouter) => {
 		if (router.data.theme === 'light' || router.data.theme === 'dark') {
 			setTimeout(() => {
 				WebApp.setHeaderColor(config.colors[router.data.theme].header);
-			}, 20);
+			}, 200);
 		}
 	}, [router.data.theme]);
 
