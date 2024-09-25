@@ -32,7 +32,7 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 					router.setTabbarShow(true);
 					router.setPanel('home_main');
 				}, 500); // анимация исчезноваения
-			}, 0 + 500 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
+			}, 0 + 50000 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
 		}
 	}, []);
 
@@ -50,10 +50,17 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 				id="PanelSplashScreen_LogoWrappper"
 				style={{
 					paddingBottom: bottom,
+					backgroundColor: 'green',
 				}}
 			>
-				<KoinzTextLogo />
-				<div id="PanelSplashScreen_Logo_Version">v4.0</div>
+				<div
+					style={{
+						backgroundColor: 'red',
+					}}
+				>
+					<KoinzTextLogo />
+					<div id="PanelSplashScreen_Logo_Version">v4.0</div>
+				</div>
 			</div>
 			<div
 				id="PanelSplashScreen_LoadingText"
