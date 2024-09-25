@@ -1,6 +1,6 @@
 import useHaptic from 'hooks/useHaptic';
 import { useEffect, useState } from 'react';
-import { IoIosArrowBack } from 'react-icons/io';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import { IRouter } from 'router/types';
 import './index.css';
 interface Props {
@@ -121,7 +121,10 @@ const Swiper = ({ router, disabled, onSwipeBack = () => {}, onSwipeBackEnd }: Pr
 					opacity: showIconBack ? 0.9 : 0.2,
 				}}
 			>
-				<IoIosArrowBack size={(CIRCLE_WIDTH / 3) * 0.9} color={'var(--primary_color)'} />
+				<IoMdArrowRoundBack
+					size={(CIRCLE_WIDTH / 3) * 0.9}
+					color={'var(--primary_color)'}
+				/>
 			</div>
 		</div>
 	);
