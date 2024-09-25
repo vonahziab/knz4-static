@@ -1,5 +1,4 @@
 import { useSetLocalStorage } from 'hooks/useLocalStorage';
-import useSafeInsets from 'hooks/useSafeInsets';
 import 'i18n/config';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -11,7 +10,6 @@ const Main = ({ id, router }: PanelProps) => {
 	const { t } = useTranslation();
 	const setLocalStorageLang = useSetLocalStorage('lang');
 	const setLocalStorageTheme = useSetLocalStorage('theme');
-	const { bottom } = useSafeInsets();
 
 	return (
 		<Panel id={id} router={router} style={{ gap: 16 }}>
@@ -27,14 +25,6 @@ const Main = ({ id, router }: PanelProps) => {
 			>
 				Go to Test Modal
 			</button>
-
-			<div
-				style={{
-					height: bottom,
-					width: '100%',
-					backgroundColor: 'green',
-				}}
-			/>
 
 			<button
 				onClick={() => {
