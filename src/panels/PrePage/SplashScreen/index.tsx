@@ -32,7 +32,7 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 					router.setTabbarShow(true);
 					router.setPanel('home_main');
 				}, 500); // анимация исчезноваения
-			}, 0 + 555500 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
+			}, 0 + 500 + 250); // анимация появления + задержка (будет ждать ответ от сервера)
 		}
 	}, []);
 
@@ -44,7 +44,6 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 				height: '100%',
 				width: '100%',
 				boxSizing: 'border-box',
-				backgroundColor: 'red',
 				paddingBottom: `calc(16px + ${bottom})`,
 			}}
 		>
@@ -55,7 +54,6 @@ const SplashScreen = ({ id, router }: PanelProps) => {
 					display: 'flex',
 					justifyContent: 'center',
 					alignItems: 'center',
-					backgroundColor: 'green',
 				}}
 			>
 				<div id="PanelSplashScreen_LogoWrappper">
