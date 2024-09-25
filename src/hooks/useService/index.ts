@@ -50,9 +50,7 @@ const useService = (router: IRouter) => {
 		if (!WebApp.isVersionAtLeast('6.9')) return;
 
 		if (router.data.theme === 'light' || router.data.theme === 'dark') {
-			setTimeout(() => {
-				WebApp.setHeaderColor(config.colors[router.data.theme].header);
-			}, 200);
+			WebApp.setHeaderColor(config.colors[router.data.theme].header);
 		}
 	}, [router.data.theme]);
 
