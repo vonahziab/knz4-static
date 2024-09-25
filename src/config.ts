@@ -1,6 +1,7 @@
 const config = {
 	server: {
 		domain: 'https://api.koinz.ru',
+		ws: 'https://ws.koinz.ru:10005',
 	},
 	colors: {
 		light: {
@@ -11,7 +12,7 @@ const config = {
 		},
 	},
 	links: {},
-	version: '0.183',
+	version: '0.184',
 };
 
 export default config;
