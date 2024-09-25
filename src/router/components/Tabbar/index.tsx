@@ -41,6 +41,7 @@ const Tabbar = ({ router }: { router: IRouter }) => {
 						className="VersionBlock"
 						style={{
 							paddingBottom: bottom,
+							transition: 'var(--tabbar_wrapper_transition)',
 						}}
 					>
 						<div style={{ padding: 2 }}>V{config.version}</div>
