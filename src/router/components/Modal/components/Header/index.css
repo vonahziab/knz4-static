@@ -1,9 +1,0 @@
-.Modal_BackBtn {
-	transition: var(--modal_header_buttons_transition);
-	cursor: pointer;
-}
-
-.Modal_CloseBtn {
-	transition: var(--modal_header_buttons_transition);
-	cursor: pointer;
-}

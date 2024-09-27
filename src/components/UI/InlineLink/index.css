@@ -1,8 +1,0 @@
-.InlineLink {
-	color: var(--link_color);
-}
-
-.InlineLink:active {
-	color: var(--link_color);
-	opacity: 0.7;
-}
