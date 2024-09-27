@@ -6,6 +6,7 @@
 	bottom: 0px;
 	background-color: var(--bg_color);
 	border-top: solid 1px var(--border_color);
+	border-radius: 16px 16px 0 0;
 	transition: var(--tabbar_wrapper_transition);
 	transform: translateY(100%);
 	z-index: 999;
