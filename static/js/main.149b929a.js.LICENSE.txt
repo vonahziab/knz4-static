@@ -40,8 +40,4 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-//!
-
-//! useService(router);
-
 //! {!(router.data.history[vieweId].length > 1)}
