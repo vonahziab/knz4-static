@@ -42,8 +42,6 @@
 
 //!
 
-//! !router.data.popout
-
 //! useService(router);
 
 //! {!(router.data.history[vieweId].length > 1)}
