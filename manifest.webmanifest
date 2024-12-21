@@ -2,7 +2,7 @@
 	"name": "Koinz",
 	"short_name": "Koinz",
 	"description": "Экономический симулятор",
-	"start_url": "/",
+	"start_url": "/index.html",
 	"orientation": "portrait",
 	"display": "standalone",
 	"background_color": "#ffffff",
